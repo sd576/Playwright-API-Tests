@@ -1,0 +1,2292 @@
+[
+    {
+        "settlementId": "001-EUR",
+        "counterpartyId": "001",
+        "counterpartyName": "Barclays Bank",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by Barclays Bank",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "001-USD",
+        "counterpartyId": "001",
+        "counterpartyName": "Barclays Bank",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Barclays Bank",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "001-JPY",
+        "counterpartyId": "001",
+        "counterpartyName": "Barclays Bank",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Barclays Bank",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "001-AUD",
+        "counterpartyId": "001",
+        "counterpartyName": "Barclays Bank",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Barclays Bank",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "001-NZD",
+        "counterpartyId": "001",
+        "counterpartyName": "Barclays Bank",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Barclays Bank",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "001-CAD",
+        "counterpartyId": "001",
+        "counterpartyName": "Barclays Bank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Barclays Bank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "002-EUR",
+        "counterpartyId": "002",
+        "counterpartyName": "HSBC Bank",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by HSBC Bank",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "002-USD",
+        "counterpartyId": "002",
+        "counterpartyName": "HSBC Bank",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by HSBC Bank",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "002-JPY",
+        "counterpartyId": "002",
+        "counterpartyName": "HSBC Bank",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by HSBC Bank",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "002-AUD",
+        "counterpartyId": "002",
+        "counterpartyName": "HSBC Bank",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by HSBC Bank",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "002-NZD",
+        "counterpartyId": "002",
+        "counterpartyName": "HSBC Bank",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by HSBC Bank",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "002-CAD",
+        "counterpartyId": "002",
+        "counterpartyName": "HSBC Bank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by HSBC Bank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "003-EUR",
+        "counterpartyId": "003",
+        "counterpartyName": "Lloyds Bank",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by Lloyds Bank",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "003-USD",
+        "counterpartyId": "003",
+        "counterpartyName": "Lloyds Bank",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Lloyds Bank",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "003-JPY",
+        "counterpartyId": "003",
+        "counterpartyName": "Lloyds Bank",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Lloyds Bank",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "003-AUD",
+        "counterpartyId": "003",
+        "counterpartyName": "Lloyds Bank",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Lloyds Bank",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "003-NZD",
+        "counterpartyId": "003",
+        "counterpartyName": "Lloyds Bank",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Lloyds Bank",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "003-CAD",
+        "counterpartyId": "003",
+        "counterpartyName": "Lloyds Bank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Lloyds Bank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "004-EUR",
+        "counterpartyId": "004",
+        "counterpartyName": "NatWest Bank",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by NatWest Bank",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "004-USD",
+        "counterpartyId": "004",
+        "counterpartyName": "NatWest Bank",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by NatWest Bank",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "004-JPY",
+        "counterpartyId": "004",
+        "counterpartyName": "NatWest Bank",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by NatWest Bank",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "004-AUD",
+        "counterpartyId": "004",
+        "counterpartyName": "NatWest Bank",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by NatWest Bank",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "004-NZD",
+        "counterpartyId": "004",
+        "counterpartyName": "NatWest Bank",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by NatWest Bank",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "004-CAD",
+        "counterpartyId": "004",
+        "counterpartyName": "NatWest Bank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by NatWest Bank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "005-EUR",
+        "counterpartyId": "005",
+        "counterpartyName": "Standard Chartered Bank",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by Standard Chartered Bank",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "005-USD",
+        "counterpartyId": "005",
+        "counterpartyName": "Standard Chartered Bank",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Standard Chartered Bank",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "005-JPY",
+        "counterpartyId": "005",
+        "counterpartyName": "Standard Chartered Bank",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Standard Chartered Bank",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "005-AUD",
+        "counterpartyId": "005",
+        "counterpartyName": "Standard Chartered Bank",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Standard Chartered Bank",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "005-NZD",
+        "counterpartyId": "005",
+        "counterpartyName": "Standard Chartered Bank",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Standard Chartered Bank",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "005-CAD",
+        "counterpartyId": "005",
+        "counterpartyName": "Standard Chartered Bank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Standard Chartered Bank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "006-EUR",
+        "counterpartyId": "006",
+        "counterpartyName": "JPMorgan Chase",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by JPMorgan Chase",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "006-GBP",
+        "counterpartyId": "006",
+        "counterpartyName": "JPMorgan Chase",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by JPMorgan Chase",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "006-JPY",
+        "counterpartyId": "006",
+        "counterpartyName": "JPMorgan Chase",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by JPMorgan Chase",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "006-AUD",
+        "counterpartyId": "006",
+        "counterpartyName": "JPMorgan Chase",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by JPMorgan Chase",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "006-NZD",
+        "counterpartyId": "006",
+        "counterpartyName": "JPMorgan Chase",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by JPMorgan Chase",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "006-CAD",
+        "counterpartyId": "006",
+        "counterpartyName": "JPMorgan Chase",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by JPMorgan Chase",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "007-EUR",
+        "counterpartyId": "007",
+        "counterpartyName": "Citibank",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by Citibank",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "007-GBP",
+        "counterpartyId": "007",
+        "counterpartyName": "Citibank",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Citibank",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "007-JPY",
+        "counterpartyId": "007",
+        "counterpartyName": "Citibank",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Citibank",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "007-AUD",
+        "counterpartyId": "007",
+        "counterpartyName": "Citibank",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Citibank",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "007-NZD",
+        "counterpartyId": "007",
+        "counterpartyName": "Citibank",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Citibank",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "007-CAD",
+        "counterpartyId": "007",
+        "counterpartyName": "Citibank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Citibank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "008-EUR",
+        "counterpartyId": "008",
+        "counterpartyName": "Goldman Sachs",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by Goldman Sachs",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "008-GBP",
+        "counterpartyId": "008",
+        "counterpartyName": "Goldman Sachs",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Goldman Sachs",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "008-JPY",
+        "counterpartyId": "008",
+        "counterpartyName": "Goldman Sachs",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Goldman Sachs",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "008-AUD",
+        "counterpartyId": "008",
+        "counterpartyName": "Goldman Sachs",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Goldman Sachs",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "008-NZD",
+        "counterpartyId": "008",
+        "counterpartyName": "Goldman Sachs",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Goldman Sachs",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "008-CAD",
+        "counterpartyId": "008",
+        "counterpartyName": "Goldman Sachs",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Goldman Sachs",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "009-EUR",
+        "counterpartyId": "009",
+        "counterpartyName": "Morgan Stanley",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by Morgan Stanley",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "009-GBP",
+        "counterpartyId": "009",
+        "counterpartyName": "Morgan Stanley",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Morgan Stanley",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "009-JPY",
+        "counterpartyId": "009",
+        "counterpartyName": "Morgan Stanley",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Morgan Stanley",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "009-AUD",
+        "counterpartyId": "009",
+        "counterpartyName": "Morgan Stanley",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Morgan Stanley",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "009-NZD",
+        "counterpartyId": "009",
+        "counterpartyName": "Morgan Stanley",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Morgan Stanley",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "009-CAD",
+        "counterpartyId": "009",
+        "counterpartyName": "Morgan Stanley",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Morgan Stanley",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "010-EUR",
+        "counterpartyId": "010",
+        "counterpartyName": "Bank of America",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by Bank of America",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "010-GBP",
+        "counterpartyId": "010",
+        "counterpartyName": "Bank of America",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Bank of America",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "010-JPY",
+        "counterpartyId": "010",
+        "counterpartyName": "Bank of America",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Bank of America",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "010-AUD",
+        "counterpartyId": "010",
+        "counterpartyName": "Bank of America",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Bank of America",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "010-NZD",
+        "counterpartyId": "010",
+        "counterpartyName": "Bank of America",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Bank of America",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "010-CAD",
+        "counterpartyId": "010",
+        "counterpartyName": "Bank of America",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Bank of America",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "011-USD",
+        "counterpartyId": "011",
+        "counterpartyName": "BNP Paribas",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by BNP Paribas",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "011-GBP",
+        "counterpartyId": "011",
+        "counterpartyName": "BNP Paribas",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by BNP Paribas",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "011-JPY",
+        "counterpartyId": "011",
+        "counterpartyName": "BNP Paribas",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by BNP Paribas",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "011-AUD",
+        "counterpartyId": "011",
+        "counterpartyName": "BNP Paribas",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by BNP Paribas",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "011-NZD",
+        "counterpartyId": "011",
+        "counterpartyName": "BNP Paribas",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by BNP Paribas",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "011-CAD",
+        "counterpartyId": "011",
+        "counterpartyName": "BNP Paribas",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by BNP Paribas",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "012-USD",
+        "counterpartyId": "012",
+        "counterpartyName": "Société Générale",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Société Générale",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "012-GBP",
+        "counterpartyId": "012",
+        "counterpartyName": "Société Générale",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Société Générale",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "012-JPY",
+        "counterpartyId": "012",
+        "counterpartyName": "Société Générale",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Société Générale",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "012-AUD",
+        "counterpartyId": "012",
+        "counterpartyName": "Société Générale",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Société Générale",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "012-NZD",
+        "counterpartyId": "012",
+        "counterpartyName": "Société Générale",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Société Générale",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "012-CAD",
+        "counterpartyId": "012",
+        "counterpartyName": "Société Générale",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Société Générale",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "013-USD",
+        "counterpartyId": "013",
+        "counterpartyName": "Crédit Agricole",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Crédit Agricole",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "013-GBP",
+        "counterpartyId": "013",
+        "counterpartyName": "Crédit Agricole",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Crédit Agricole",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "013-JPY",
+        "counterpartyId": "013",
+        "counterpartyName": "Crédit Agricole",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Crédit Agricole",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "013-AUD",
+        "counterpartyId": "013",
+        "counterpartyName": "Crédit Agricole",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Crédit Agricole",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "013-NZD",
+        "counterpartyId": "013",
+        "counterpartyName": "Crédit Agricole",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Crédit Agricole",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "013-CAD",
+        "counterpartyId": "013",
+        "counterpartyName": "Crédit Agricole",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Crédit Agricole",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "014-USD",
+        "counterpartyId": "014",
+        "counterpartyName": "Natixis",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Natixis",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "014-GBP",
+        "counterpartyId": "014",
+        "counterpartyName": "Natixis",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Natixis",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "014-JPY",
+        "counterpartyId": "014",
+        "counterpartyName": "Natixis",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Natixis",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "014-AUD",
+        "counterpartyId": "014",
+        "counterpartyName": "Natixis",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Natixis",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "014-NZD",
+        "counterpartyId": "014",
+        "counterpartyName": "Natixis",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Natixis",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "014-CAD",
+        "counterpartyId": "014",
+        "counterpartyName": "Natixis",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Natixis",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "015-USD",
+        "counterpartyId": "015",
+        "counterpartyName": "La Banque Postale",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by La Banque Postale",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "015-GBP",
+        "counterpartyId": "015",
+        "counterpartyName": "La Banque Postale",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by La Banque Postale",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "015-JPY",
+        "counterpartyId": "015",
+        "counterpartyName": "La Banque Postale",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by La Banque Postale",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "015-AUD",
+        "counterpartyId": "015",
+        "counterpartyName": "La Banque Postale",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by La Banque Postale",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "015-NZD",
+        "counterpartyId": "015",
+        "counterpartyName": "La Banque Postale",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by La Banque Postale",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "015-CAD",
+        "counterpartyId": "015",
+        "counterpartyName": "La Banque Postale",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by La Banque Postale",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "016-USD",
+        "counterpartyId": "016",
+        "counterpartyName": "Deutsche Bank",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Deutsche Bank",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "016-GBP",
+        "counterpartyId": "016",
+        "counterpartyName": "Deutsche Bank",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Deutsche Bank",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "016-JPY",
+        "counterpartyId": "016",
+        "counterpartyName": "Deutsche Bank",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Deutsche Bank",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "016-AUD",
+        "counterpartyId": "016",
+        "counterpartyName": "Deutsche Bank",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Deutsche Bank",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "016-NZD",
+        "counterpartyId": "016",
+        "counterpartyName": "Deutsche Bank",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Deutsche Bank",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "016-CAD",
+        "counterpartyId": "016",
+        "counterpartyName": "Deutsche Bank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Deutsche Bank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "017-USD",
+        "counterpartyId": "017",
+        "counterpartyName": "Commerzbank",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Commerzbank",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "017-GBP",
+        "counterpartyId": "017",
+        "counterpartyName": "Commerzbank",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Commerzbank",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "017-JPY",
+        "counterpartyId": "017",
+        "counterpartyName": "Commerzbank",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Commerzbank",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "017-AUD",
+        "counterpartyId": "017",
+        "counterpartyName": "Commerzbank",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Commerzbank",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "017-NZD",
+        "counterpartyId": "017",
+        "counterpartyName": "Commerzbank",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Commerzbank",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "017-CAD",
+        "counterpartyId": "017",
+        "counterpartyName": "Commerzbank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Commerzbank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "018-USD",
+        "counterpartyId": "018",
+        "counterpartyName": "KfW Bank",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by KfW Bank",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "018-GBP",
+        "counterpartyId": "018",
+        "counterpartyName": "KfW Bank",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by KfW Bank",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "018-JPY",
+        "counterpartyId": "018",
+        "counterpartyName": "KfW Bank",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by KfW Bank",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "018-AUD",
+        "counterpartyId": "018",
+        "counterpartyName": "KfW Bank",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by KfW Bank",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "018-NZD",
+        "counterpartyId": "018",
+        "counterpartyName": "KfW Bank",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by KfW Bank",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "018-CAD",
+        "counterpartyId": "018",
+        "counterpartyName": "KfW Bank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by KfW Bank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "019-USD",
+        "counterpartyId": "019",
+        "counterpartyName": "DZ Bank",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by DZ Bank",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "019-GBP",
+        "counterpartyId": "019",
+        "counterpartyName": "DZ Bank",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by DZ Bank",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "019-JPY",
+        "counterpartyId": "019",
+        "counterpartyName": "DZ Bank",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by DZ Bank",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "019-AUD",
+        "counterpartyId": "019",
+        "counterpartyName": "DZ Bank",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by DZ Bank",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "019-NZD",
+        "counterpartyId": "019",
+        "counterpartyName": "DZ Bank",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by DZ Bank",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "019-CAD",
+        "counterpartyId": "019",
+        "counterpartyName": "DZ Bank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by DZ Bank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "020-USD",
+        "counterpartyId": "020",
+        "counterpartyName": "Helaba (Landesbank Hessen-Thüringen)",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Helaba (Landesbank Hessen-Thüringen)",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "020-GBP",
+        "counterpartyId": "020",
+        "counterpartyName": "Helaba (Landesbank Hessen-Thüringen)",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Helaba (Landesbank Hessen-Thüringen)",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "020-JPY",
+        "counterpartyId": "020",
+        "counterpartyName": "Helaba (Landesbank Hessen-Thüringen)",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Helaba (Landesbank Hessen-Thüringen)",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "020-AUD",
+        "counterpartyId": "020",
+        "counterpartyName": "Helaba (Landesbank Hessen-Thüringen)",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Helaba (Landesbank Hessen-Thüringen)",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "020-NZD",
+        "counterpartyId": "020",
+        "counterpartyName": "Helaba (Landesbank Hessen-Thüringen)",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Helaba (Landesbank Hessen-Thüringen)",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "020-CAD",
+        "counterpartyId": "020",
+        "counterpartyName": "Helaba (Landesbank Hessen-Thüringen)",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Helaba (Landesbank Hessen-Thüringen)",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "021-USD",
+        "counterpartyId": "021",
+        "counterpartyName": "ABN AMRO",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by ABN AMRO",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "021-GBP",
+        "counterpartyId": "021",
+        "counterpartyName": "ABN AMRO",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by ABN AMRO",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "021-JPY",
+        "counterpartyId": "021",
+        "counterpartyName": "ABN AMRO",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by ABN AMRO",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "021-AUD",
+        "counterpartyId": "021",
+        "counterpartyName": "ABN AMRO",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by ABN AMRO",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "021-NZD",
+        "counterpartyId": "021",
+        "counterpartyName": "ABN AMRO",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by ABN AMRO",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "021-CAD",
+        "counterpartyId": "021",
+        "counterpartyName": "ABN AMRO",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by ABN AMRO",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "022-USD",
+        "counterpartyId": "022",
+        "counterpartyName": "ING Bank",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by ING Bank",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "022-GBP",
+        "counterpartyId": "022",
+        "counterpartyName": "ING Bank",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by ING Bank",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "022-JPY",
+        "counterpartyId": "022",
+        "counterpartyName": "ING Bank",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by ING Bank",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "022-AUD",
+        "counterpartyId": "022",
+        "counterpartyName": "ING Bank",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by ING Bank",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "022-NZD",
+        "counterpartyId": "022",
+        "counterpartyName": "ING Bank",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by ING Bank",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "022-CAD",
+        "counterpartyId": "022",
+        "counterpartyName": "ING Bank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by ING Bank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "023-USD",
+        "counterpartyId": "023",
+        "counterpartyName": "Rabobank",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Rabobank",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "023-GBP",
+        "counterpartyId": "023",
+        "counterpartyName": "Rabobank",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Rabobank",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "023-JPY",
+        "counterpartyId": "023",
+        "counterpartyName": "Rabobank",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Rabobank",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "023-AUD",
+        "counterpartyId": "023",
+        "counterpartyName": "Rabobank",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Rabobank",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "023-NZD",
+        "counterpartyId": "023",
+        "counterpartyName": "Rabobank",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Rabobank",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "023-CAD",
+        "counterpartyId": "023",
+        "counterpartyName": "Rabobank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Rabobank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "024-USD",
+        "counterpartyId": "024",
+        "counterpartyName": "Bunq",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Bunq",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "024-GBP",
+        "counterpartyId": "024",
+        "counterpartyName": "Bunq",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Bunq",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "024-JPY",
+        "counterpartyId": "024",
+        "counterpartyName": "Bunq",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Bunq",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "024-AUD",
+        "counterpartyId": "024",
+        "counterpartyName": "Bunq",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Bunq",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "024-NZD",
+        "counterpartyId": "024",
+        "counterpartyName": "Bunq",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Bunq",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "024-CAD",
+        "counterpartyId": "024",
+        "counterpartyName": "Bunq",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Bunq",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "025-USD",
+        "counterpartyId": "025",
+        "counterpartyName": "Van Lanschot Kempen",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Van Lanschot Kempen",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "025-GBP",
+        "counterpartyId": "025",
+        "counterpartyName": "Van Lanschot Kempen",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Van Lanschot Kempen",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "025-JPY",
+        "counterpartyId": "025",
+        "counterpartyName": "Van Lanschot Kempen",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Van Lanschot Kempen",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "025-AUD",
+        "counterpartyId": "025",
+        "counterpartyName": "Van Lanschot Kempen",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Van Lanschot Kempen",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "025-NZD",
+        "counterpartyId": "025",
+        "counterpartyName": "Van Lanschot Kempen",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Van Lanschot Kempen",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "025-CAD",
+        "counterpartyId": "025",
+        "counterpartyName": "Van Lanschot Kempen",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Van Lanschot Kempen",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "026-EUR",
+        "counterpartyId": "026",
+        "counterpartyName": "Commonwealth Bank of Australia",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "Deutsche Bank, Frankfurt - EUR Nostro Account managed by Commonwealth Bank of Australia",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "026-USD",
+        "counterpartyId": "026",
+        "counterpartyName": "Commonwealth Bank of Australia",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Commonwealth Bank of Australia",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "026-GBP",
+        "counterpartyId": "026",
+        "counterpartyName": "Commonwealth Bank of Australia",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Commonwealth Bank of Australia",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "026-JPY",
+        "counterpartyId": "026",
+        "counterpartyName": "Commonwealth Bank of Australia",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Commonwealth Bank of Australia",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "026-NZD",
+        "counterpartyId": "026",
+        "counterpartyName": "Commonwealth Bank of Australia",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Commonwealth Bank of Australia",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "026-CAD",
+        "counterpartyId": "026",
+        "counterpartyName": "Commonwealth Bank of Australia",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Commonwealth Bank of Australia",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "027-EUR",
+        "counterpartyId": "027",
+        "counterpartyName": "Westpac Banking Corporation",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by Westpac Banking Corporation",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "027-USD",
+        "counterpartyId": "027",
+        "counterpartyName": "Westpac Banking Corporation",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Westpac Banking Corporation",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "027-GBP",
+        "counterpartyId": "027",
+        "counterpartyName": "Westpac Banking Corporation",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Westpac Banking Corporation",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "027-JPY",
+        "counterpartyId": "027",
+        "counterpartyName": "Westpac Banking Corporation",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Westpac Banking Corporation",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "027-NZD",
+        "counterpartyId": "027",
+        "counterpartyName": "Westpac Banking Corporation",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Westpac Banking Corporation",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "027-CAD",
+        "counterpartyId": "027",
+        "counterpartyName": "Westpac Banking Corporation",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Westpac Banking Corporation",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "028-EUR",
+        "counterpartyId": "028",
+        "counterpartyName": "National Australia Bank (NAB)",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by National Australia Bank (NAB)",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "028-USD",
+        "counterpartyId": "028",
+        "counterpartyName": "National Australia Bank (NAB)",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by National Australia Bank (NAB)",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "028-GBP",
+        "counterpartyId": "028",
+        "counterpartyName": "National Australia Bank (NAB)",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by National Australia Bank (NAB)",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "028-JPY",
+        "counterpartyId": "028",
+        "counterpartyName": "National Australia Bank (NAB)",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by National Australia Bank (NAB)",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "028-NZD",
+        "counterpartyId": "028",
+        "counterpartyName": "National Australia Bank (NAB)",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by National Australia Bank (NAB)",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "028-CAD",
+        "counterpartyId": "028",
+        "counterpartyName": "National Australia Bank (NAB)",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by National Australia Bank (NAB)",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "029-EUR",
+        "counterpartyId": "029",
+        "counterpartyName": "ANZ Banking Group",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by ANZ Banking Group",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "029-USD",
+        "counterpartyId": "029",
+        "counterpartyName": "ANZ Banking Group",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by ANZ Banking Group",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "029-GBP",
+        "counterpartyId": "029",
+        "counterpartyName": "ANZ Banking Group",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by ANZ Banking Group",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "029-JPY",
+        "counterpartyId": "029",
+        "counterpartyName": "ANZ Banking Group",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by ANZ Banking Group",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "029-NZD",
+        "counterpartyId": "029",
+        "counterpartyName": "ANZ Banking Group",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by ANZ Banking Group",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "029-CAD",
+        "counterpartyId": "029",
+        "counterpartyName": "ANZ Banking Group",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by ANZ Banking Group",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "030-EUR",
+        "counterpartyId": "030",
+        "counterpartyName": "Macquarie Bank",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by Macquarie Bank",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "030-USD",
+        "counterpartyId": "030",
+        "counterpartyName": "Macquarie Bank",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Macquarie Bank",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "030-GBP",
+        "counterpartyId": "030",
+        "counterpartyName": "Macquarie Bank",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Macquarie Bank",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "030-JPY",
+        "counterpartyId": "030",
+        "counterpartyName": "Macquarie Bank",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Macquarie Bank",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "030-NZD",
+        "counterpartyId": "030",
+        "counterpartyName": "Macquarie Bank",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Macquarie Bank",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "030-CAD",
+        "counterpartyId": "030",
+        "counterpartyName": "Macquarie Bank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Macquarie Bank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "031-EUR",
+        "counterpartyId": "031",
+        "counterpartyName": "Bank of New Zealand (BNZ)",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by Bank of New Zealand (BNZ)",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "031-USD",
+        "counterpartyId": "031",
+        "counterpartyName": "Bank of New Zealand (BNZ)",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Bank of New Zealand (BNZ)",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "031-GBP",
+        "counterpartyId": "031",
+        "counterpartyName": "Bank of New Zealand (BNZ)",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Bank of New Zealand (BNZ)",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "031-JPY",
+        "counterpartyId": "031",
+        "counterpartyName": "Bank of New Zealand (BNZ)",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Bank of New Zealand (BNZ)",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "031-AUD",
+        "counterpartyId": "031",
+        "counterpartyName": "Bank of New Zealand (BNZ)",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Bank of New Zealand (BNZ)",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "031-CAD",
+        "counterpartyId": "031",
+        "counterpartyName": "Bank of New Zealand (BNZ)",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Bank of New Zealand (BNZ)",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "032-EUR",
+        "counterpartyId": "032",
+        "counterpartyName": "ANZ Bank New Zealand",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by ANZ Bank New Zealand",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "032-USD",
+        "counterpartyId": "032",
+        "counterpartyName": "ANZ Bank New Zealand",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by ANZ Bank New Zealand",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "032-GBP",
+        "counterpartyId": "032",
+        "counterpartyName": "ANZ Bank New Zealand",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by ANZ Bank New Zealand",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "032-JPY",
+        "counterpartyId": "032",
+        "counterpartyName": "ANZ Bank New Zealand",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by ANZ Bank New Zealand",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "032-AUD",
+        "counterpartyId": "032",
+        "counterpartyName": "ANZ Bank New Zealand",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by ANZ Bank New Zealand",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "032-CAD",
+        "counterpartyId": "032",
+        "counterpartyName": "ANZ Bank New Zealand",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by ANZ Bank New Zealand",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "033-EUR",
+        "counterpartyId": "033",
+        "counterpartyName": "Kiwibank",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by Kiwibank",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "033-USD",
+        "counterpartyId": "033",
+        "counterpartyName": "Kiwibank",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Kiwibank",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "033-GBP",
+        "counterpartyId": "033",
+        "counterpartyName": "Kiwibank",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Kiwibank",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "033-JPY",
+        "counterpartyId": "033",
+        "counterpartyName": "Kiwibank",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Kiwibank",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "033-AUD",
+        "counterpartyId": "033",
+        "counterpartyName": "Kiwibank",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Kiwibank",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "033-CAD",
+        "counterpartyId": "033",
+        "counterpartyName": "Kiwibank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Kiwibank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "034-EUR",
+        "counterpartyId": "034",
+        "counterpartyName": "Westpac New Zealand",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by Westpac New Zealand",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "034-USD",
+        "counterpartyId": "034",
+        "counterpartyName": "Westpac New Zealand",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Westpac New Zealand",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "034-GBP",
+        "counterpartyId": "034",
+        "counterpartyName": "Westpac New Zealand",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Westpac New Zealand",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "034-JPY",
+        "counterpartyId": "034",
+        "counterpartyName": "Westpac New Zealand",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Westpac New Zealand",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "034-AUD",
+        "counterpartyId": "034",
+        "counterpartyName": "Westpac New Zealand",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Westpac New Zealand",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "034-CAD",
+        "counterpartyId": "034",
+        "counterpartyName": "Westpac New Zealand",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Westpac New Zealand",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "035-EUR",
+        "counterpartyId": "035",
+        "counterpartyName": "ASB Bank",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by ASB Bank",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "035-USD",
+        "counterpartyId": "035",
+        "counterpartyName": "ASB Bank",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by ASB Bank",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "035-GBP",
+        "counterpartyId": "035",
+        "counterpartyName": "ASB Bank",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by ASB Bank",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "035-JPY",
+        "counterpartyId": "035",
+        "counterpartyName": "ASB Bank",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by ASB Bank",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "035-AUD",
+        "counterpartyId": "035",
+        "counterpartyName": "ASB Bank",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by ASB Bank",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "035-CAD",
+        "counterpartyId": "035",
+        "counterpartyName": "ASB Bank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by ASB Bank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "036-EUR",
+        "counterpartyId": "036",
+        "counterpartyName": "Mizuho Bank",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by Mizuho Bank",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "036-USD",
+        "counterpartyId": "036",
+        "counterpartyName": "Mizuho Bank",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Mizuho Bank",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "036-GBP",
+        "counterpartyId": "036",
+        "counterpartyName": "Mizuho Bank",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Mizuho Bank",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "036-AUD",
+        "counterpartyId": "036",
+        "counterpartyName": "Mizuho Bank",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Mizuho Bank",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "036-NZD",
+        "counterpartyId": "036",
+        "counterpartyName": "Mizuho Bank",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Mizuho Bank",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "036-CAD",
+        "counterpartyId": "036",
+        "counterpartyName": "Mizuho Bank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Mizuho Bank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    },
+    {
+        "settlementId": "037-EUR",
+        "counterpartyId": "037",
+        "counterpartyName": "Royal Bank of Canada",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by Royal Bank of Canada",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "037-USD",
+        "counterpartyId": "037",
+        "counterpartyName": "Royal Bank of Canada",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Royal Bank of Canada",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "037-GBP",
+        "counterpartyId": "037",
+        "counterpartyName": "Royal Bank of Canada",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Royal Bank of Canada",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "037-JPY",
+        "counterpartyId": "037",
+        "counterpartyName": "Royal Bank of Canada",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Royal Bank of Canada",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "037-AUD",
+        "counterpartyId": "037",
+        "counterpartyName": "Royal Bank of Canada",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Royal Bank of Canada",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "037-NZD",
+        "counterpartyId": "037",
+        "counterpartyName": "Royal Bank of Canada",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Royal Bank of Canada",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "999-GBP",
+        "counterpartyId": "999",
+        "counterpartyName": "Global Trade Bank",
+        "currency": "GBP",
+        "nostroAccountId": "001",
+        "nostroDescription": "001 - GBP Nostro Account managed by Global Trade Bank",
+        "managedById": "001",
+        "managedByName": "Barclays Bank"
+    },
+    {
+        "settlementId": "999-EUR",
+        "counterpartyId": "999",
+        "counterpartyName": "Global Trade Bank",
+        "currency": "EUR",
+        "nostroAccountId": "016",
+        "nostroDescription": "016 - EUR Nostro Account managed by Global Trade Bank",
+        "managedById": "016",
+        "managedByName": "Deutsche Bank"
+    },
+    {
+        "settlementId": "999-USD",
+        "counterpartyId": "999",
+        "counterpartyName": "Global Trade Bank",
+        "currency": "USD",
+        "nostroAccountId": "010",
+        "nostroDescription": "010 - USD Nostro Account managed by Global Trade Bank",
+        "managedById": "010",
+        "managedByName": "Bank of America"
+    },
+    {
+        "settlementId": "999-JPY",
+        "counterpartyId": "999",
+        "counterpartyName": "Global Trade Bank",
+        "currency": "JPY",
+        "nostroAccountId": "036",
+        "nostroDescription": "036 - JPY Nostro Account managed by Global Trade Bank",
+        "managedById": "036",
+        "managedByName": "Mizuho Bank"
+    },
+    {
+        "settlementId": "999-AUD",
+        "counterpartyId": "999",
+        "counterpartyName": "Global Trade Bank",
+        "currency": "AUD",
+        "nostroAccountId": "026",
+        "nostroDescription": "026 - AUD Nostro Account managed by Global Trade Bank",
+        "managedById": "026",
+        "managedByName": "Commonwealth Bank of Australia"
+    },
+    {
+        "settlementId": "999-NZD",
+        "counterpartyId": "999",
+        "counterpartyName": "Global Trade Bank",
+        "currency": "NZD",
+        "nostroAccountId": "034",
+        "nostroDescription": "034 - NZD Nostro Account managed by Global Trade Bank",
+        "managedById": "034",
+        "managedByName": "Westpac New Zealand"
+    },
+    {
+        "settlementId": "999-CAD",
+        "counterpartyId": "999",
+        "counterpartyName": "Global Trade Bank",
+        "currency": "CAD",
+        "nostroAccountId": "037",
+        "nostroDescription": "037 - CAD Nostro Account managed by Global Trade Bank",
+        "managedById": "037",
+        "managedByName": "Royal Bank of Canada"
+    }
+]
