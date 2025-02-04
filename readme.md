@@ -49,7 +49,7 @@ cd /path/to/FX-TradeHub-API
 npm start
 ```
 
-(Default URL: http://localhost:3000)
+[Default URL:](http://localhost:3000)
 
 ## Running the API Tests
 
