@@ -38,9 +38,12 @@ npm install
 ### Ensure the FX-TradeHub-API server is running
 
 Before running tests, the FX-TradeHub-API must be running locally:
+
 👉 FX-TradeHub-API GitHub Repo [Repo](https://github.com/sd576/FX-TradeHub-API)
 
+```sh
 cd /path/to/FX-TradeHub-API
+```
 
 ```bash
 npm start
@@ -58,12 +61,12 @@ npx playwright test
 
 ### Run a single test file
 
-This command is run from the root directory, which references the location ('src/tests/api/') of the tests
+This command is run from the root directory, which references the location (`src/tests/api/`) of the tests
 
 The format is:
 
 ```bash
-npx playwright test <path to test><test_name>
+npx playwright test `<path to test>``<test_name>`
 ```
 
 ```bash
@@ -88,7 +91,7 @@ npx playwright test --ui
 
 ### Reseed the database:
 
-cd /path/to/FX-TradeHub-API
+`cd /path/to/FX-TradeHub-API`
 
 ```bash
 npm run db
