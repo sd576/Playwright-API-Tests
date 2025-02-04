@@ -13,26 +13,32 @@ This repository contains API tests for the **FX-TradeHub-API**, built using [Pla
 
 ## 🏗️ Setup & Installation
 
-### **1️⃣ Clone the repository**
+### **1️⃣ Choose the directory to clone your repository to**
 
-```sh
-git clone https://github.com/YOUR_GITHUB_USERNAME/Playwright-API-Tests.git
+```bash
 cd Playwright-API-Tests
+```
 
+### **2️⃣ Clone the repository**
+
+```bash
+git clone https://github.com/YOUR_GITHUB_USERNAME/Playwright-API-Tests.git
 ```
 
 ## Getting Started
 
-###Install dependencies
+### Install dependencies
+
 Ensure you have Node.js (v18+) installed, then run:
 
 ```bash
 npm install
 ```
 
-###Ensure the FX-TradeHub-API server is running
+### Ensure the FX-TradeHub-API server is running
+
 Before running tests, the FX-TradeHub-API must be running locally:
-👉 FX-TradeHub-API GitHub Repo [link text](https://github.com/sd576/FX-TradeHub-API)
+👉 FX-TradeHub-API GitHub Repo [Repo](https://github.com/sd576/FX-TradeHub-API)
 
 cd /path/to/FX-TradeHub-API
 
@@ -42,15 +48,16 @@ npm start
 
 (Default URL: http://localhost:3000)
 
-##Running the API Tests
+## Running the API Tests
 
-###Run all tests
+### Run all tests
 
 ```bash
 npx playwright test
 ```
 
-###Run a single test file
+### Run a single test file
+
 This command is run from the root directory, which references the location ('src/tests/api/') of the tests
 
 The format is:
@@ -63,13 +70,13 @@ npx playwright test <path to test><test_name>
 npx playwright test src/tests/api/counterpartiesCRUD.spec.ts
 ```
 
-###Run tests with UI mode
+### Run tests with UI mode
 
 ```bash
 npx playwright test --ui
 ```
 
-##Test Structure
+## Test Structure
 
 - **src/tests/api/** → API test cases
 - **src/fixtures/** → Data comparison utilities
@@ -79,7 +86,7 @@ npx playwright test --ui
 
 1. Tests are failing due to missing data
 
-###Reseed the database:
+### Reseed the database:
 
 cd /path/to/FX-TradeHub-API
 
