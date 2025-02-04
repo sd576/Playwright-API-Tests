@@ -91,13 +91,15 @@ npx playwright test --ui
 
 ### Reseed the database:
 
-`cd /path/to/FX-TradeHub-API`
+```bash
+cd /path/to/FX-TradeHub-API
+```
 
 ```bash
 npm run db
 ```
 
-Start the API server
+### Start the API server
 
 ```bash
 npm start
