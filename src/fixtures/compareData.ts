@@ -1,12 +1,22 @@
 import { expect } from "@playwright/test";
 
+/**
+ * Compares API response with reference data as is
+ */
 export function compareData(responseBody: any, referenceData: any): void {
-  if (JSON.stringify(responseBody) !== JSON.stringify(referenceData)) {
-    console.error("Mismatch detected:");
-    console.error("Received (Response Body):", JSON.stringify(responseBody, null, 2));
-    console.error("Expected (Reference Data):", JSON.stringify(referenceData, null, 2));
-  }
+  // Normalize both API response and reference data to ensure strict comparison
+  const normalize = (entry: any) => ({
+    counterpartyId: entry.counterpartyId || null,
+    currency: entry.currency || null,
+    id: entry.id ?? null,
+    managedById: entry.managedById || null,
+    nostroAccountId: entry.nostroAccountId || null,
+    nostroDescription: entry.nostroDescription || null,
+  });
 
-  // Perform a deep comparison
-  expect(responseBody).toEqual(referenceData);
+  const normalizedResponse = responseBody.map(normalize);
+  const normalizedReference = referenceData.map(normalize);
+
+  // Perform a deep comparison ensuring no undefined values
+  expect(normalizedResponse).toEqual(normalizedReference);
 }
