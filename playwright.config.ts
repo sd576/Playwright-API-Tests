@@ -3,7 +3,7 @@ import { defineConfig } from "@playwright/test";
 export default defineConfig({
   testDir: "./src/tests",
   fullyParallel: true,
-  retries: 1,
+  retries: 0,
   reporter: "html",
   workers: 1,
   use: {

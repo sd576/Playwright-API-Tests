@@ -3,7 +3,7 @@ import { test, expect } from "../../hooks/apiHooks";
 const API_BASE_URL = "http://localhost:3000/api";
 const COUNTERPARTY_ID = "CPTY001";
 
-// Define initial test data
+// Define a new counterparty to perform CRUD on
 const newCounterparty = {
   id: "CPTY001",
   name: "Test Counterparty",
