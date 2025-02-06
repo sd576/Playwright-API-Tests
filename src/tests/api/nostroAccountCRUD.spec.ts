@@ -77,6 +77,87 @@ test.describe("Nostro Account CRUD Operations", () => {
     expect(responseBody).toMatchObject(newNostroAccount);
   });
 
+  test("PUT / Update the entire Nostro Account", async ({ request }) => {
+    if (!createdNostroId)
+      throw new Error(
+        "[❌ ERROR] No Nostro Account ID found from previous test!"
+      );
+
+    console.log(`[📝 UPDATE] Updating Nostro Account: ${createdNostroId}`);
+
+    const updatedNostroAccount = {
+      id: "002-CHF",
+      counterpartyId: "003", // Changed
+      currency: "EUR", // Changed
+      nostroAccountId: "021", // Changed
+      nostroDescription: "021 - EUR Nostro Account managed by Deutsche Bank", // Changed
+      managedById: "021", // Changed
+    };
+
+    const putResponse = await request.put(
+      `${API_BASE_URL}/nostro-accounts/${createdNostroId}`,
+      { data: updatedNostroAccount }
+    );
+
+    console.log("[ℹ️ INFO] PUT Response Status:", putResponse.status());
+    expect(putResponse.status()).toBe(200);
+
+    // Verify update
+    const getResponse = await request.get(
+      `${API_BASE_URL}/nostro-accounts/${createdNostroId}`
+    );
+    const getResponseBody = await getResponse.json();
+
+    console.log("[🔍 FETCH AFTER UPDATE] GET Response Body:", getResponseBody);
+    expect(getResponseBody).toMatchObject(updatedNostroAccount);
+  });
+
+  test("PATCH / Partially update the Nostro Account", async ({ request }) => {
+    console.log(
+      "[🛠️ PATCH] Fetching current Nostro Account to determine update..."
+    );
+
+    // 🔹 Step 1: Fetch the existing record
+    const getResponse = await request.get(
+      `${API_BASE_URL}/nostro-accounts/002-CHF`
+    );
+    expect(getResponse.status()).toBe(200);
+
+    const existingData = await getResponse.json();
+    console.log("[🔍 FETCHED RECORD BEFORE PATCH]:", existingData);
+
+    // 🔹 Step 2: Determine new currency value (toggle CHF <-> EUR)
+    const newCurrency = existingData.currency === "CHF" ? "EUR" : "CHF";
+
+    // 🔹 Step 3: Send PATCH request with updated currency
+    console.log(
+      `[🛠️ PATCH] Updating currency from ${existingData.currency} to ${newCurrency}...`
+    );
+
+    const patchResponse = await request.patch(
+      `${API_BASE_URL}/nostro-accounts/002-CHF`,
+      {
+        data: { currency: newCurrency },
+      }
+    );
+
+    console.log("[ℹ️ INFO] PATCH Response Status:", patchResponse.status());
+    expect(patchResponse.status()).toBe(200);
+
+    // 🔹 Step 4: Verify PATCH update
+    const getAfterPatchResponse = await request.get(
+      `${API_BASE_URL}/nostro-accounts/002-CHF`
+    );
+    console.log(
+      "[🔍 FETCH AFTER PATCH] GET Response Body:",
+      await getAfterPatchResponse.json()
+    );
+    expect(getAfterPatchResponse.status()).toBe(200);
+
+    const updatedData = await getAfterPatchResponse.json();
+    expect(updatedData.currency).toBe(newCurrency); // ✅ Ensure currency is toggled
+  });
+
   test("DELETE / Delete the created Nostro Account", async ({ request }) => {
     if (!createdNostroId)
       throw new Error(
