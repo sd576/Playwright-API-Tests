@@ -2,6 +2,8 @@ import { test, expect } from "@playwright/test";
 import { compareData } from "../../fixtures/compareData";
 import counterpartyData from "../../../reference-data/counterpartyData.json";
 
+const API_BASE_URL = "http://localhost:3000/api";
+
 test.describe.configure({ mode: "serial" });
 
 test("GET /counterparties - Validate Counterparty Data", async ({
@@ -11,9 +13,7 @@ test("GET /counterparties - Validate Counterparty Data", async ({
   await new Promise((resolve) => setTimeout(resolve, 500));
 
   console.log("Fetching all counterparties...");
-  const response = await request.get(
-    "http://localhost:3000/api/nostro-accounts/counterparties"
-  );
+  const response = await request.get(`${API_BASE_URL}/counterparties`);
 
   console.log("GET Response Status: ", response.status());
   console.log("GET Response Body:", await response.text());

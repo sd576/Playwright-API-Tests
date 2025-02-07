@@ -1,5 +1,7 @@
 import { test, expect } from "../../hooks/apiHooks";
 
+const API_BASE_URL = "http://localhost:3000/api";
+
 test.describe.configure({ mode: "serial" });
 
 test.describe("Negative CRUD API tests", () => {
@@ -10,12 +12,9 @@ test.describe("Negative CRUD API tests", () => {
 
     const incompleteCounterparty = { id: "CPTY999" };
 
-    const response = await request.post(
-      "http://localhost:3000/api/counterparties",
-      {
-        data: incompleteCounterparty,
-      }
-    );
+    const response = await request.post(`${API_BASE_URL}/counterparties`, {
+      data: incompleteCounterparty,
+    });
 
     console.log("Response Status: ", response.status());
     expect(response.status()).toBe(400);
