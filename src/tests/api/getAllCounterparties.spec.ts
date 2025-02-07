@@ -16,6 +16,7 @@ test("GET /counterparties - Validate Counterparty Data", async ({
   );
 
   console.log("GET Response Status: ", response.status());
+  console.log("GET Response Body:", await response.text());
   expect(response.status()).toBe(200);
 
   const responseBody = await response.json();

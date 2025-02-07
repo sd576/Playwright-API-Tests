@@ -1,22 +1,26 @@
 import { expect } from "@playwright/test";
 
-/**
- * Compares API response with reference data as is
- */
 export function compareData(responseBody: any, referenceData: any): void {
-  // Normalize both API response and reference data for strict comparison
   const normalize = (entry: any) => ({
-    counterpartyId: entry.counterpartyId || null,
-    currency: entry.currency || null,
-    id: entry.id ?? entry.compoundKey, // ✅ Map compoundKey -> id
-    managedById: entry.managedById || null,
-    nostroAccountId: entry.nostroAccountId ?? entry.nostroCode, // ✅ Map nostroCode -> nostroAccountId
-    nostroDescription: entry.nostroDescription ?? entry.description, // ✅ Map description -> nostroDescription
+    id: entry.id,
+    counterpartyId: entry.counterpartyId,
+    currency: entry.currency,
+    nostroAccountId: entry.nostroAccountId,
+    nostroDescription: entry.nostroDescription,
+    managedById: entry.managedById,
   });
 
   const normalizedResponse = responseBody.map(normalize);
   const normalizedReference = referenceData.map(normalize);
 
-  // Perform a deep comparison ensuring no undefined values
+  console.log(
+    "🔍 Normalized API Response:",
+    JSON.stringify(normalizedResponse, null, 2)
+  );
+  console.log(
+    "🔍 Normalized Reference Data:",
+    JSON.stringify(normalizedReference, null, 2)
+  );
+
   expect(normalizedResponse).toEqual(normalizedReference);
 }

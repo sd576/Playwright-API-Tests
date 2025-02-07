@@ -45,15 +45,30 @@ test.describe("Counterparty API - CRUD Operations", () => {
 
   test("PUT - Update counterparty", async ({ request }) => {
     console.log("🚀 Updating CPTY001...");
+
     const updatedData = {
       ...newCounterparty,
       name: "Updated Counterparty",
-      phone: "+44 20 7654 3210",
+      phone: "+442076543210",
     };
+
+    console.log(
+      "🔍 Sending PUT request to:",
+      `${API_BASE_URL}/counterparties/${COUNTERPARTY_ID}`
+    );
+    console.log("📦 Request Body: ", JSON.stringify(updatedData, null, 2));
+
     const putResponse = await request.put(
       `${API_BASE_URL}/counterparties/${COUNTERPARTY_ID}`,
-      { data: updatedData }
+      {
+        headers: { "Content-Type": "application/json" },
+        data: updatedData,
+      }
     );
+
+    console.log("🔍 PUT Response Status:", putResponse.status());
+    console.log("📩 PUT Response Body:", await putResponse.text());
+
     expect(putResponse.status()).toBe(200);
   });
 
