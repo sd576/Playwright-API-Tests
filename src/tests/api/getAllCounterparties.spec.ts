@@ -9,18 +9,18 @@ test.describe.configure({ mode: "serial" });
 test("GET /counterparties - Validate Counterparty Data", async ({
   request,
 }) => {
-  console.log("Waiting for the database to settle...");
-  await new Promise((resolve) => setTimeout(resolve, 500));
-
   console.log("Fetching all counterparties...");
   const response = await request.get(`${API_BASE_URL}/counterparties`);
 
-  console.log("GET Response Status: ", response.status());
-  console.log("GET Response Body:", await response.text());
   expect(response.status()).toBe(200);
 
   const responseBody = await response.json();
-  console.log("GET Response Body: ", responseBody);
 
-  await compareData(responseBody, counterpartyData);
+  console.log("Filtering out dynamically created counterparties...");
+  const filteredResponse = responseBody.filter(
+    (counterparty: any) => counterparty.id !== "CPTY001"
+  );
+
+  console.log("Comparing filtered API response with reference data...");
+  await compareData(filteredResponse, counterpartyData);
 });
