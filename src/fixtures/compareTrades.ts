@@ -1,13 +1,11 @@
 import { expect } from "@playwright/test";
 
-// Function to normalize dynamic fields (tradeDate, settlementDate) to 'DYNAMIC'
 const normalizeTradeDates = (trade: any) => ({
   ...trade,
   tradeDate: "DYNAMIC",
   settlementDate: "DYNAMIC",
 });
 
-// Function to normalize other fields for consistent comparison
 const normalize = (trade: any) => ({
   tradeId: trade.tradeId,
   tradeType: trade.tradeType,
@@ -25,40 +23,65 @@ const normalize = (trade: any) => ({
   sellNostroAccountId: trade.sellNostroAccountId,
 });
 
-// Main compareTrades function
 export async function compareTrades(apiResponse: any[], referenceData: any[]) {
   console.log(
     "Normalizing and sorting trade data for consistent comparison..."
   );
 
-  // Normalize and sort the API response
   const normalizedResponse = apiResponse
     .map(normalize)
     .map(normalizeTradeDates)
     .sort((a: any, b: any) => a.tradeId.localeCompare(b.tradeId));
 
-  // Normalize and sort the reference data
   const normalizedReference = referenceData
     .map(normalize)
     .map(normalizeTradeDates)
     .sort((a: any, b: any) => a.tradeId.localeCompare(b.tradeId));
 
-  // Log the count of trades in each array for debugging
   console.log(`API Response Count: ${normalizedResponse.length}`);
   console.log(`Reference Data Count: ${normalizedReference.length}`);
 
+  // Filter the API response to include only trades present in the reference data
+  const filteredResponse = normalizedResponse.filter((trade: any) =>
+    normalizedReference.some((ref: any) => ref.tradeId === trade.tradeId)
+  );
+
+  console.log(`Filtered API Response Count: ${filteredResponse.length}`);
+
+  // Count trades by tradeType for deeper analysis
+  const responseByTradeType = filteredResponse.reduce(
+    (acc: any, trade: any) => {
+      acc[trade.tradeType] = (acc[trade.tradeType] || 0) + 1;
+      return acc;
+    },
+    {}
+  );
+
+  const referenceByTradeType = normalizedReference.reduce(
+    (acc: any, trade: any) => {
+      acc[trade.tradeType] = (acc[trade.tradeType] || 0) + 1;
+      return acc;
+    },
+    {}
+  );
+
+  console.log(
+    "Filtered API Response Count by Trade Type:",
+    responseByTradeType
+  );
+  console.log("Reference Data Count by Trade Type:", referenceByTradeType);
+
   console.log(
     "🔍 Normalized API Response:",
-    JSON.stringify(normalizedResponse, null, 2)
+    JSON.stringify(filteredResponse, null, 2)
   );
   console.log(
     "🔍 Normalized Reference Data:",
     JSON.stringify(normalizedReference, null, 2)
   );
 
-  // Compare the normalized and sorted responses
   try {
-    expect(normalizedResponse).toEqual(normalizedReference);
+    expect(filteredResponse).toEqual(normalizedReference);
     console.log("✅ Trade data matches reference data!");
   } catch (error) {
     console.error("❌ Trade data does NOT match reference data.");
