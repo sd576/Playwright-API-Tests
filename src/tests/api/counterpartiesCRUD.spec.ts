@@ -1,4 +1,6 @@
 import { test, expect } from "@playwright/test";
+import { waitForServerReady } from "../../fixtures/serverSetup";
+import { request } from "http";
 
 const API_BASE_URL = "http://localhost:3000/api";
 const COUNTERPARTY_ID = "CPTY001";
@@ -15,6 +17,23 @@ const newCounterparty = {
   email: "john.doe@example.com",
   phone: "+44 207000000",
 };
+
+test.beforeEach(async ({ request }) => {
+  if (process.env.CI) {
+    console.log("🔄 Running server readiness check in pipeline... ");
+    await waitForServerReady(request, `${API_BASE_URL}/counterparties`);
+  }
+
+  console.log(`♻️ Ensuring ${COUNTERPARTY_ID} does not exist before test ...`);
+  await request.delete(`${API_BASE_URL}/counterparties/${COUNTERPARTY_ID}`);
+  console.log(`✅ Creating ${COUNTERPARTY_ID}...`);
+  const postResponse = await request.post(`${API_BASE_URL}/counterparties`, {
+    data: newCounterparty,
+  });
+  if (postResponse.status() !== 201) {
+    throw new Error(`❌ Failed to create ${COUNTERPARTY_ID}`);
+  }
+});
 
 test.describe("Counterparty API - Full CRUD Operations", () => {
   test.beforeEach(async ({ request }) => {
