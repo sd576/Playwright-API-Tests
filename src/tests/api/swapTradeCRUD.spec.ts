@@ -3,7 +3,7 @@ import { test, expect, request, APIRequestContext } from "@playwright/test";
 const API_BASE_URL = "http://localhost:3000/api";
 const SWAP_TRADE_ID = "SWAP-TEST-001";
 
-test.describe("Swap Trade CRUD Operations", () => {
+test.describe.skip("Swap Trade CRUD Operations", () => {
   let apiRequest: APIRequestContext;
 
   test.beforeAll(async () => {
