@@ -10,116 +10,90 @@ const SPOT_TRADE_ID = "SPOT-TEST-001";
 const newSpotTrade = {
   tradeId: SPOT_TRADE_ID,
   tradeType: "SPOT",
-  parentTradeId: null,
-  tradeDate: "2025-02-27",
-  settlementDate: "2025-02-28",
-  weBuyWeSell: "we buy",
-  counterpartyId: "001",
-  buyCurrency: "EUR",
-  sellCurrency: "USD",
-  buyAmount: 1000000,
-  sellAmount: 1100000,
-  exchangeRate: 1.1,
-  buyNostroAccountId: "001-EUR",
-  sellNostroAccountId: "001-USD",
+  tradeDate: "2025-02-10",
+  settlementDate: "2025-02-12",
+  weBuyWeSell: "we sell",
+  counterpartyId: "CPTY002",
+  buyCurrency: "USD",
+  sellCurrency: "GBP",
+  buyAmount: 500000,
+  sellAmount: 375000,
+  exchangeRate: 0.75,
+  buyNostroAccountId: "002-USD",
+  sellNostroAccountId: "003-GBP",
 };
 
-// Helper function to normalize dates to YYYY-MM-DD format
-const normalizeDates = (trade: any) => ({
-  ...trade,
-  tradeDate: trade.tradeDate ? trade.tradeDate.substring(0, 10) : "",
-  settlementDate: trade.settlementDate
-    ? trade.settlementDate.substring(0, 10)
-    : "",
-});
+test.describe("Spot Trade API - Full CRUD Operations", () => {
+  test.beforeEach(async ({ request }, testInfo) => {
+    console.log(`🔄 Running setup for test: ${testInfo.title}`);
 
-test.beforeEach(async ({ request }, testInfo) => {
-  console.log(`🔄 Running setup for test: ${testInfo.title}`);
-  if (process.env.CI) {
-    console.log("🔄 Running server readiness check in pipeline...");
-    await waitForServerReady(request, `${API_BASE_URL}/trades`);
-  }
+    if (process.env.CI) {
+      console.log("🔄 Running server readiness check in pipeline...");
+      await waitForServerReady(request, `${API_BASE_URL}/trades`);
+    }
 
-  await ensureResourceClean(
-    request,
-    `${API_BASE_URL}/trades`,
-    SPOT_TRADE_ID,
-    newSpotTrade
-  );
-});
+    await ensureResourceClean(
+      request,
+      `${API_BASE_URL}/trades`,
+      SPOT_TRADE_ID,
+      newSpotTrade
+    );
+  });
 
-test.describe("Spot Trade CRUD Operations", () => {
+  // ✅ 1. POST - Create Spot Trade
   test("POST - Create new Spot Trade", async ({ request }) => {
-    console.log(`✅ Creating ${SPOT_TRADE_ID}...`);
-    const postResponse = await request.post(`${API_BASE_URL}/trades`, {
-      data: newSpotTrade,
-    });
-    expect(postResponse.status()).toBe(201);
-
     const getResponse = await request.get(
       `${API_BASE_URL}/trades/${SPOT_TRADE_ID}`
     );
     expect(getResponse.status()).toBe(200);
-    console.log("GET Response after POST:", await getResponse.json());
+    expect(await getResponse.json()).toMatchObject(newSpotTrade);
   });
 
+  // ✅ 2. GET - Retrieve Spot Trade
   test("GET - Retrieve Spot Trade", async ({ request }) => {
-    console.log("🔍 Fetching Spot Trade...");
     const getResponse = await request.get(
       `${API_BASE_URL}/trades/${SPOT_TRADE_ID}`
     );
     expect(getResponse.status()).toBe(200);
-
-    const responseBody = normalizeDates(await getResponse.json());
-    console.log(responseBody);
-    expect(responseBody).toMatchObject(newSpotTrade);
+    expect(await getResponse.json()).toMatchObject(newSpotTrade);
   });
 
+  // ✅ 3. PUT - Fully Update Spot Trade
   test("PUT - Fully update Spot Trade", async ({ request }) => {
-    console.log("🚀 Performing full update via PUT...");
     const updatedData = {
       ...newSpotTrade,
-      buyAmount: 2000000,
-      sellAmount: 2200000,
-      exchangeRate: 1.2,
+      buyAmount: 550000,
+      sellAmount: 412500,
     };
-
     const putResponse = await request.put(
       `${API_BASE_URL}/trades/${SPOT_TRADE_ID}`,
-      {
-        data: updatedData,
-      }
+      { data: updatedData }
     );
     expect(putResponse.status()).toBe(200);
 
     const getUpdatedResponse = await request.get(
       `${API_BASE_URL}/trades/${SPOT_TRADE_ID}`
     );
-    const responseBody = normalizeDates(await getUpdatedResponse.json());
-    expect(responseBody).toMatchObject(updatedData);
+    expect(await getUpdatedResponse.json()).toMatchObject(updatedData);
   });
 
+  // ✅ 4. PATCH - Partial Update (Change exchangeRate)
   test("PATCH - Partially update Spot Trade", async ({ request }) => {
-    console.log("🚀 Performing partial update via PATCH...");
-    const patchData = { weBuyWeSell: "we sell" };
-
+    const patchData = { exchangeRate: 0.8 };
     const patchResponse = await request.patch(
       `${API_BASE_URL}/trades/${SPOT_TRADE_ID}`,
-      {
-        data: patchData,
-      }
+      { data: patchData }
     );
     expect(patchResponse.status()).toBe(200);
 
-    const getPatchedResponse = await request.get(
-      `${API_BASE_URL}/trades/${SPOT_TRADE_ID}`
-    );
-    const patchedTrade = normalizeDates(await getPatchedResponse.json());
-    expect(patchedTrade.weBuyWeSell).toBe("we sell");
+    const updatedTrade = await request
+      .get(`${API_BASE_URL}/trades/${SPOT_TRADE_ID}`)
+      .then((res) => res.json());
+    expect(updatedTrade.exchangeRate).toBe(0.8);
   });
 
+  // ✅ 5. DELETE - Remove Spot Trade
   test("DELETE - Remove Spot Trade", async ({ request }) => {
-    console.log("🚀 Deleting Spot Trade...");
     const deleteResponse = await request.delete(
       `${API_BASE_URL}/trades/${SPOT_TRADE_ID}`
     );

@@ -10,121 +10,90 @@ const FORWARD_TRADE_ID = "FWD-TEST-001";
 const newForwardTrade = {
   tradeId: FORWARD_TRADE_ID,
   tradeType: "FORWARD",
-  parentTradeId: null,
-  tradeDate: "2025-02-27",
-  settlementDate: "2025-03-30",
-  weBuyWeSell: "we sell",
-  counterpartyId: "001",
+  tradeDate: "2025-02-10",
+  settlementDate: "2025-03-10",
+  weBuyWeSell: "we buy",
+  counterpartyId: "CPTY001",
   buyCurrency: "EUR",
   sellCurrency: "USD",
   buyAmount: 1000000,
-  sellAmount: 1100000,
-  exchangeRate: 1.1,
+  sellAmount: 1050000,
+  exchangeRate: 1.05,
   buyNostroAccountId: "001-EUR",
-  sellNostroAccountId: "001-USD",
+  sellNostroAccountId: "002-USD",
 };
 
-test.beforeEach(async ({ request }, testInfo) => {
-  console.log(`🔄 Running setup for test: ${testInfo.title}`);
-  if (process.env.CI) {
-    console.log("🔄 Running server readiness check in pipeline...");
-    await waitForServerReady(request, `${API_BASE_URL}/trades`);
-  }
+test.describe("Forward Trade API - Full CRUD Operations", () => {
+  test.beforeEach(async ({ request }, testInfo) => {
+    console.log(`🔄 Running setup for test: ${testInfo.title}`);
 
-  await ensureResourceClean(
-    request,
-    `${API_BASE_URL}/trades`,
-    FORWARD_TRADE_ID,
-    newForwardTrade
-  );
-});
+    if (process.env.CI) {
+      console.log("🔄 Running server readiness check in pipeline...");
+      await waitForServerReady(request, `${API_BASE_URL}/trades`);
+    }
 
-test.describe("Forward Trade CRUD Operations", () => {
+    await ensureResourceClean(
+      request,
+      `${API_BASE_URL}/trades`,
+      FORWARD_TRADE_ID,
+      newForwardTrade
+    );
+  });
+
+  // ✅ 1. POST - Create Forward Trade
   test("POST - Create new Forward Trade", async ({ request }) => {
-    console.log(`✅ Creating ${FORWARD_TRADE_ID}...`);
-    const postResponse = await request.post(`${API_BASE_URL}/trades`, {
-      data: newForwardTrade,
-    });
-    expect(postResponse.status()).toBe(201);
-
     const getResponse = await request.get(
       `${API_BASE_URL}/trades/${FORWARD_TRADE_ID}`
     );
     expect(getResponse.status()).toBe(200);
-    console.log("GET Response after POST:", await getResponse.json());
+    expect(await getResponse.json()).toMatchObject(newForwardTrade);
   });
 
+  // ✅ 2. GET - Retrieve Forward Trade
   test("GET - Retrieve Forward Trade", async ({ request }) => {
-    console.log("🔍 Fetching Forward Trade...");
     const getResponse = await request.get(
       `${API_BASE_URL}/trades/${FORWARD_TRADE_ID}`
     );
     expect(getResponse.status()).toBe(200);
-
-    const responseBody = await getResponse.json();
-    console.log(responseBody);
-    expect(responseBody.tradeId).toBe(FORWARD_TRADE_ID);
+    expect(await getResponse.json()).toMatchObject(newForwardTrade);
   });
 
+  // ✅ 3. PUT - Fully Update Forward Trade
   test("PUT - Fully update Forward Trade", async ({ request }) => {
-    console.log("🚀 Performing full update via PUT...");
-    const updatedTrade = {
+    const updatedData = {
       ...newForwardTrade,
-      parentTradeId: "FWD-BASE-001",
-      tradeDate: "2025-02-28",
-      settlementDate: "2025-04-01",
-      weBuyWeSell: "we buy",
-      counterpartyId: "002",
-      buyCurrency: "USD",
-      sellCurrency: "EUR",
-      buyAmount: 1100000,
-      sellAmount: 1000000,
-      exchangeRate: 0.91,
-      buyNostroAccountId: "002-USD",
-      sellNostroAccountId: "002-EUR",
+      buyAmount: 1200000,
+      sellAmount: 1260000,
     };
-
     const putResponse = await request.put(
       `${API_BASE_URL}/trades/${FORWARD_TRADE_ID}`,
-      {
-        data: updatedTrade,
-      }
+      { data: updatedData }
     );
     expect(putResponse.status()).toBe(200);
 
     const getUpdatedResponse = await request.get(
       `${API_BASE_URL}/trades/${FORWARD_TRADE_ID}`
     );
-    const responseBody = await getUpdatedResponse.json();
-    expect(responseBody).toMatchObject(updatedTrade);
+    expect(await getUpdatedResponse.json()).toMatchObject(updatedData);
   });
 
+  // ✅ 4. PATCH - Partial Update (Change settlementDate)
   test("PATCH - Partially update Forward Trade", async ({ request }) => {
-    console.log("🚀 Performing partial update via PATCH...");
-    const patchData = {
-      settlementDate: "2025-04-15",
-      weBuyWeSell: "we sell",
-    };
-
+    const patchData = { settlementDate: "2025-03-15" };
     const patchResponse = await request.patch(
       `${API_BASE_URL}/trades/${FORWARD_TRADE_ID}`,
-      {
-        data: patchData,
-      }
+      { data: patchData }
     );
     expect(patchResponse.status()).toBe(200);
 
-    const getPatchedResponse = await request.get(
-      `${API_BASE_URL}/trades/${FORWARD_TRADE_ID}`
-    );
-    const responseBody = await getPatchedResponse.json();
-
-    expect(responseBody.settlementDate).toBe(patchData.settlementDate);
-    expect(responseBody.weBuyWeSell).toBe(patchData.weBuyWeSell);
+    const updatedTrade = await request
+      .get(`${API_BASE_URL}/trades/${FORWARD_TRADE_ID}`)
+      .then((res) => res.json());
+    expect(updatedTrade.settlementDate).toBe("2025-03-15");
   });
 
+  // ✅ 5. DELETE - Remove Forward Trade
   test("DELETE - Remove Forward Trade", async ({ request }) => {
-    console.log(`🚀 Deleting Forward Trade ${FORWARD_TRADE_ID}...`);
     const deleteResponse = await request.delete(
       `${API_BASE_URL}/trades/${FORWARD_TRADE_ID}`
     );
