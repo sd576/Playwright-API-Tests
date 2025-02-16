@@ -1,22 +1,37 @@
 export async function waitForServerReady(
   request: any,
-  url: string,
-  timeout = 10000
+  url: any,
+  maxAttempts = 60,
+  interval = 1000
 ) {
-  const start = Date.now();
-  while (Date.now() - start < timeout) {
+  console.log(`🔄 Checking server readiness at ${url}`);
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
       const response = await request.get(url);
       if (response.status() === 200) {
-        console.log("✅ Server is ready!");
-        return true;
+        console.log(`✅ Server is ready at ${url} (Attempt ${attempt})`);
+        return;
+      } else {
+        console.log(
+          `❗ Attempt ${attempt}: Received status ${response.status()}`
+        );
       }
-    } catch (err) {
-      console.log("Server not ready, retrying...");
+    } catch (error) {
+      if (error instanceof Error) {
+        console.log(`⚠️ Attempt ${attempt}: Error occurred - ${error.message}`);
+      } else {
+        console.log(`⚠️ Attempt ${attempt}: Unknown error occurred`);
+      }
     }
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    await new Promise((resolve) => setTimeout(resolve, interval));
   }
-  throw new Error("❌ Server not ready after 10 seconds.");
+
+  throw new Error(
+    `❌ Server not ready after ${maxAttempts} attempts (${
+      (maxAttempts * interval) / 1000
+    } seconds).`
+  );
 }
 
 export async function ensureResourceClean(

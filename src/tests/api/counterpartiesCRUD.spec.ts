@@ -20,7 +20,8 @@ const newCounterparty = {
   phone: "+44 207000000",
 };
 
-test.beforeEach(async ({ request }) => {
+test.beforeEach(async ({ request }, testInfo) => {
+  console.log(`🔄 Running setup for test: ${testInfo.title}`);
   if (process.env.CI) {
     console.log("🔄 Running server readiness check in pipeline... ");
     await waitForServerReady(request, `${API_BASE_URL}/counterparties`);
