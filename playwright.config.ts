@@ -1,8 +1,8 @@
 import { defineConfig } from "@playwright/test";
 
 export default defineConfig({
-  testDir: "./src/tests",
-  timeout: 60000, // Global test timeout: 60 seconds
+  testDir: "./src/tests/api",
+  timeout: 60000,
   retries: 0,
   reporter: "html",
   use: {
@@ -12,14 +12,4 @@ export default defineConfig({
     },
     trace: "on-first-retry",
   },
-  projects: [
-    {
-      name: "CRUD tests",
-      testMatch: ["**/CRUD/**"],
-    },
-    {
-      name: "Negative tests",
-      testMatch: ["**/Negative/**"],
-    },
-  ],
 });
