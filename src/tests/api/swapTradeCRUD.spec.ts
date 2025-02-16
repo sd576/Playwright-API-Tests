@@ -1,4 +1,8 @@
 import { test, expect, request, APIRequestContext } from "@playwright/test";
+import {
+  waitForServerReady,
+  ensureResourceClean,
+} from "../../fixtures/serverSetup";
 
 const API_BASE_URL = "http://localhost:3000/api";
 const SWAP_TRADE_ID = "SWAP-TEST-001";

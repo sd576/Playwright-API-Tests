@@ -1,5 +1,3 @@
-import { resolve } from "path";
-
 export async function waitForServerReady(
   request: any,
   url: string,
@@ -19,4 +17,21 @@ export async function waitForServerReady(
     await new Promise((resolve) => setTimeout(resolve, 500));
   }
   throw new Error("❌ Server not ready after 10 seconds.");
+}
+
+export async function ensureResourceClean(
+  request: any,
+  url: string,
+  resourceId: string,
+  postData: any
+) {
+  console.log(`♻️ Ensuring ${resourceId} does not exist before test...`);
+  await request.delete(`${url}/${resourceId}`);
+
+  console.log(`✅ Creating ${resourceId}...`);
+  const postResponse = await request.post(`${url}`, { data: postData });
+
+  if (postResponse.status() !== 201) {
+    throw new Error(`❌ Failed to create ${resourceId}`);
+  }
 }

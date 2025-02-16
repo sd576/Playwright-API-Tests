@@ -1,4 +1,8 @@
 import { test, expect } from "@playwright/test";
+import {
+  waitForServerReady,
+  ensureResourceClean,
+} from "../../fixtures/serverSetup";
 
 const API_BASE_URL = "http://localhost:3000/api";
 const NOSTRO_ID = "002-CHF";
@@ -12,24 +16,21 @@ const newNostroAccount = {
   managedById: "020",
 };
 
+test.beforeEach(async ({ request }) => {
+  if (process.env.CI) {
+    console.log("🔄 Running server readiness check in pipeline...");
+    await waitForServerReady(request, `${API_BASE_URL}/nostro-accounts`);
+  }
+
+  await ensureResourceClean(
+    request,
+    `${API_BASE_URL}/nostro-accounts`,
+    NOSTRO_ID,
+    newNostroAccount
+  );
+});
+
 test.describe("Nostro Account CRUD Operations", () => {
-  test.beforeEach(async ({ request }) => {
-    console.log(`♻️ Ensuring ${NOSTRO_ID} exists before test...`);
-
-    // Delete if exists
-    await request.delete(`${API_BASE_URL}/nostro-accounts/${NOSTRO_ID}`);
-
-    // Recreate
-    const postResponse = await request.post(`${API_BASE_URL}/nostro-accounts`, {
-      data: newNostroAccount,
-    });
-
-    if (postResponse.status() !== 201) {
-      throw new Error(`❌ Failed to create ${NOSTRO_ID}`);
-    }
-    console.log(`✅ Created ${NOSTRO_ID}`);
-  });
-
   test("GET / Retrieve the newly created Nostro Account", async ({
     request,
   }) => {

@@ -1,4 +1,8 @@
 import { test, expect } from "@playwright/test";
+import {
+  waitForServerReady,
+  ensureResourceClean,
+} from "../../fixtures/serverSetup";
 
 const API_BASE_URL = "http://localhost:3000/api";
 const SPOT_TRADE_ID = "SPOT-TEST-001";
@@ -29,8 +33,21 @@ const normalizeDates = (trade: any) => ({
     : "",
 });
 
+test.beforeEach(async ({ request }) => {
+  if (process.env.CI) {
+    console.log("🔄 Running server readiness check in pipeline...");
+    await waitForServerReady(request, `${API_BASE_URL}/trades`);
+  }
+
+  await ensureResourceClean(
+    request,
+    `${API_BASE_URL}/trades`,
+    SPOT_TRADE_ID,
+    newSpotTrade
+  );
+});
+
 test.describe("Spot Trade CRUD Operations", () => {
-  // ✅ 1. POST - Create Spot Trade
   test("POST - Create new Spot Trade", async ({ request }) => {
     console.log(`✅ Creating ${SPOT_TRADE_ID}...`);
     const postResponse = await request.post(`${API_BASE_URL}/trades`, {
@@ -45,7 +62,6 @@ test.describe("Spot Trade CRUD Operations", () => {
     console.log("GET Response after POST:", await getResponse.json());
   });
 
-  // ✅ 2. GET - Retrieve Spot Trade
   test("GET - Retrieve Spot Trade", async ({ request }) => {
     console.log("🔍 Fetching Spot Trade...");
     const getResponse = await request.get(
@@ -58,7 +74,6 @@ test.describe("Spot Trade CRUD Operations", () => {
     expect(responseBody).toMatchObject(newSpotTrade);
   });
 
-  // ✅ 3. PUT - Fully update Spot Trade
   test("PUT - Fully update Spot Trade", async ({ request }) => {
     console.log("🚀 Performing full update via PUT...");
     const updatedData = {
@@ -83,7 +98,6 @@ test.describe("Spot Trade CRUD Operations", () => {
     expect(responseBody).toMatchObject(updatedData);
   });
 
-  // ✅ 4. PATCH - Partially update Spot Trade
   test("PATCH - Partially update Spot Trade", async ({ request }) => {
     console.log("🚀 Performing partial update via PATCH...");
     const patchData = { weBuyWeSell: "we sell" };
@@ -103,7 +117,6 @@ test.describe("Spot Trade CRUD Operations", () => {
     expect(patchedTrade.weBuyWeSell).toBe("we sell");
   });
 
-  // ✅ 5. DELETE - Remove Spot Trade
   test("DELETE - Remove Spot Trade", async ({ request }) => {
     console.log("🚀 Deleting Spot Trade...");
     const deleteResponse = await request.delete(

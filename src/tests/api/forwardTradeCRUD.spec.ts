@@ -1,4 +1,8 @@
 import { test, expect } from "@playwright/test";
+import {
+  waitForServerReady,
+  ensureResourceClean,
+} from "../../fixtures/serverSetup";
 
 const API_BASE_URL = "http://localhost:3000/api";
 const FORWARD_TRADE_ID = "FWD-TEST-001";
@@ -19,6 +23,20 @@ const newForwardTrade = {
   buyNostroAccountId: "001-EUR",
   sellNostroAccountId: "001-USD",
 };
+
+test.beforeEach(async ({ request }) => {
+  if (process.env.CI) {
+    console.log("🔄 Running server readiness check in pipeline...");
+    await waitForServerReady(request, `${API_BASE_URL}/trades`);
+  }
+
+  await ensureResourceClean(
+    request,
+    `${API_BASE_URL}/trades`,
+    FORWARD_TRADE_ID,
+    newForwardTrade
+  );
+});
 
 test.describe("Forward Trade CRUD Operations", () => {
   test("POST - Create new Forward Trade", async ({ request }) => {

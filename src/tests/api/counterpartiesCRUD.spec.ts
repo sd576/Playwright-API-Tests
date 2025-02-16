@@ -1,6 +1,8 @@
 import { test, expect } from "@playwright/test";
-import { waitForServerReady } from "../../fixtures/serverSetup";
-import { request } from "http";
+import {
+  waitForServerReady,
+  ensureResourceClean,
+} from "../../fixtures/serverSetup";
 
 const API_BASE_URL = "http://localhost:3000/api";
 const COUNTERPARTY_ID = "CPTY001";
@@ -24,32 +26,15 @@ test.beforeEach(async ({ request }) => {
     await waitForServerReady(request, `${API_BASE_URL}/counterparties`);
   }
 
-  console.log(`♻️ Ensuring ${COUNTERPARTY_ID} does not exist before test ...`);
-  await request.delete(`${API_BASE_URL}/counterparties/${COUNTERPARTY_ID}`);
-  console.log(`✅ Creating ${COUNTERPARTY_ID}...`);
-  const postResponse = await request.post(`${API_BASE_URL}/counterparties`, {
-    data: newCounterparty,
-  });
-  if (postResponse.status() !== 201) {
-    throw new Error(`❌ Failed to create ${COUNTERPARTY_ID}`);
-  }
+  await ensureResourceClean(
+    request,
+    `${API_BASE_URL}/counterparties`,
+    COUNTERPARTY_ID,
+    newCounterparty
+  );
 });
 
 test.describe("Counterparty API - Full CRUD Operations", () => {
-  test.beforeEach(async ({ request }) => {
-    console.log(`♻️ Ensuring ${COUNTERPARTY_ID} does not exist before test...`);
-    await request.delete(`${API_BASE_URL}/counterparties/${COUNTERPARTY_ID}`);
-
-    console.log(`✅ Creating ${COUNTERPARTY_ID}...`);
-    const postResponse = await request.post(`${API_BASE_URL}/counterparties`, {
-      data: newCounterparty,
-    });
-
-    if (postResponse.status() !== 201) {
-      throw new Error(`❌ Failed to create ${COUNTERPARTY_ID}`);
-    }
-  });
-
   // ✅ 1. POST - Create Counterparty
   test("POST - Create new counterparty", async ({ request }) => {
     console.log("🔍 Fetching newly created counterparty...");
