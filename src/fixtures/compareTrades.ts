@@ -1,79 +1,30 @@
 import { expect } from "@playwright/test";
 
-const normalizeTradeDates = (trade: any) => ({
-  ...trade,
-  tradeDate: "DYNAMIC",
-  settlementDate: "DYNAMIC",
-});
+export function compareData(responseBody: any[], referenceData: any[]): void {
+  const normalize = (entry: any) => ({
+    tradeId: entry.tradeId,
+    tradeType: entry.tradeType,
+    parentTradeId: entry.parentTradeId || null,
+    // ❌ Ignoring tradeDate & settlementDate in assertion
+    weBuyWeSell: entry.weBuyWeSell,
+    counterpartyId: entry.counterpartyId,
+    buyCurrency: entry.buyCurrency,
+    sellCurrency: entry.sellCurrency,
+    buyAmount: entry.buyAmount,
+    sellAmount: entry.sellAmount,
+    exchangeRate: entry.exchangeRate,
+    buyNostroAccountId: entry.buyNostroAccountId || "Unknown",
+    sellNostroAccountId: entry.sellNostroAccountId || "Unknown",
+    buyNostroDescription: entry.buyNostroDescription || "Unknown",
+    sellNostroDescription: entry.sellNostroDescription || "Unknown",
+  });
 
-const normalize = (trade: any) => ({
-  tradeId: trade.tradeId,
-  tradeType: trade.tradeType,
-  parentTradeId: trade.parentTradeId || null,
-  tradeDate: trade.tradeDate,
-  settlementDate: trade.settlementDate,
-  weBuyWeSell: trade.weBuyWeSell,
-  counterpartyId: trade.counterpartyId,
-  buyCurrency: trade.buyCurrency,
-  sellCurrency: trade.sellCurrency,
-  buyAmount: trade.buyAmount,
-  sellAmount: trade.sellAmount,
-  exchangeRate: trade.exchangeRate,
-  buyNostroAccountId: trade.buyNostroAccountId,
-  sellNostroAccountId: trade.sellNostroAccountId,
-});
-
-export async function compareTrades(apiResponse: any[], referenceData: any[]) {
-  console.log(
-    "Normalizing and sorting trade data for consistent comparison..."
-  );
-
-  const normalizedResponse = apiResponse
-    .map(normalize)
-    .map(normalizeTradeDates)
-    .sort((a: any, b: any) => a.tradeId.localeCompare(b.tradeId));
-
-  const normalizedReference = referenceData
-    .map(normalize)
-    .map(normalizeTradeDates)
-    .sort((a: any, b: any) => a.tradeId.localeCompare(b.tradeId));
-
-  console.log(`API Response Count: ${normalizedResponse.length}`);
-  console.log(`Reference Data Count: ${normalizedReference.length}`);
-
-  // Filter the API response to include only trades present in the reference data
-  const filteredResponse = normalizedResponse.filter((trade: any) =>
-    normalizedReference.some((ref: any) => ref.tradeId === trade.tradeId)
-  );
-
-  console.log(`Filtered API Response Count: ${filteredResponse.length}`);
-
-  // Count trades by tradeType for deeper analysis
-  const responseByTradeType = filteredResponse.reduce(
-    (acc: any, trade: any) => {
-      acc[trade.tradeType] = (acc[trade.tradeType] || 0) + 1;
-      return acc;
-    },
-    {}
-  );
-
-  const referenceByTradeType = normalizedReference.reduce(
-    (acc: any, trade: any) => {
-      acc[trade.tradeType] = (acc[trade.tradeType] || 0) + 1;
-      return acc;
-    },
-    {}
-  );
-
-  console.log(
-    "Filtered API Response Count by Trade Type:",
-    responseByTradeType
-  );
-  console.log("Reference Data Count by Trade Type:", referenceByTradeType);
+  const normalizedResponse = responseBody.map(normalize);
+  const normalizedReference = referenceData.map(normalize);
 
   console.log(
     "🔍 Normalized API Response:",
-    JSON.stringify(filteredResponse, null, 2)
+    JSON.stringify(normalizedResponse, null, 2)
   );
   console.log(
     "🔍 Normalized Reference Data:",
@@ -81,10 +32,11 @@ export async function compareTrades(apiResponse: any[], referenceData: any[]) {
   );
 
   try {
-    expect(filteredResponse).toEqual(normalizedReference);
-    console.log("✅ Trade data matches reference data!");
+    expect(normalizedResponse).toEqual(normalizedReference);
+    console.log("✅ All trades match expected reference data!");
   } catch (error) {
-    console.error("❌ Trade data does NOT match reference data.");
-    throw error;
+    console.error("❌ Data mismatch detected!");
+    console.error(error);
+    throw error; // Ensure test fails properly
   }
 }

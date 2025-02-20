@@ -1,4 +1,4 @@
-import { test, expect, request, APIRequestContext } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 import {
   waitForServerReady,
   ensureResourceClean,
@@ -6,105 +6,124 @@ import {
 
 const API_BASE_URL = "http://localhost:3000/api";
 const SWAP_TRADE_ID = "SWAP-TEST-001";
+const SWAP_TRADE_FAR_ID = `${SWAP_TRADE_ID}-FAR`;
 
-test.describe.skip("Swap Trade CRUD Operations", () => {
-  let apiRequest: APIRequestContext;
+const newSwapTrade = {
+  tradeId: SWAP_TRADE_ID,
+  tradeType: "SWAP",
+  parentTradeId: SWAP_TRADE_ID,
+  tradeDate: "2025-02-27",
+  settlementDate: "2025-03-30",
+  weBuyWeSell: "we sell",
+  counterpartyId: "003",
+  buyCurrency: "EUR",
+  sellCurrency: "USD",
+  buyAmount: 1500000,
+  sellAmount: 1650000,
+  exchangeRate: 1.1,
+  buyNostroAccountId: "003-EUR",
+  sellNostroAccountId: "003-USD",
+};
 
-  test.beforeAll(async () => {
-    apiRequest = await request.newContext();
-    console.log("♻️ Ensuring SWAP-TEST-001 does not exist before test...");
-    await apiRequest.delete(`${API_BASE_URL}/trades/${SWAP_TRADE_ID}`);
-  });
+test.describe("🌀 Swap Trade Full CRUD Operations", () => {
+  test.beforeEach(async ({ request }, testInfo) => {
+    console.log(`🔄 Running setup for test: ${testInfo.title}`);
 
-  test("POST - Create new Swap Trade", async () => {
-    console.log("✅ Creating SWAP-TEST-001...");
-    const newSwapTrade = {
-      tradeId: SWAP_TRADE_ID,
-      tradeType: "SWAP",
-      parentTradeId: null,
-      tradeDate: "2025-02-27",
-      settlementDate: "2025-03-30",
-      weBuyWeSell: "we sell",
-      counterpartyId: "003",
-      counterpartyName: "Barclays Bank",
-      buyCurrency: "EUR",
-      sellCurrency: "USD",
-      buyAmount: 1500000,
-      sellAmount: 1650000,
-      exchangeRate: 1.1,
-      buyNostroAccountId: "003-EUR",
-      sellNostroAccountId: "003-USD",
-    };
+    if (process.env.CI) {
+      console.log("🔄 Running server readiness check in pipeline...");
+      await waitForServerReady(request, `${API_BASE_URL}/trades`);
+    }
 
-    const postResponse = await apiRequest.post(`${API_BASE_URL}/trades`, {
-      data: newSwapTrade,
-    });
-
-    expect(postResponse.status()).toBe(201);
-
-    const getResponse = await apiRequest.get(
-      `${API_BASE_URL}/trades/${SWAP_TRADE_ID}`
+    await ensureResourceClean(
+      request,
+      `${API_BASE_URL}/trades`,
+      SWAP_TRADE_ID,
+      newSwapTrade
     );
-    const responseBody = await getResponse.json();
 
-    expect(responseBody).toMatchObject(newSwapTrade);
+    console.log("⏳ Waiting before running GET...");
+    await new Promise((r) => setTimeout(r, 1000)); // Ensure DB commit
   });
 
-  test("GET - Retrieve Swap Trade", async () => {
-    console.log("🔍 Fetching Swap Trade...");
-    const getResponse = await apiRequest.get(
+  // ✅ 1. POST - Create Swap Trade
+  test("✅ POST - Create Swap Trade", async ({ request }) => {
+    const getResponse = await request.get(
       `${API_BASE_URL}/trades/${SWAP_TRADE_ID}`
     );
     expect(getResponse.status()).toBe(200);
 
-    const responseBody = await getResponse.json();
-    expect(responseBody.tradeId).toBe(SWAP_TRADE_ID);
+    const nearLegBody = await getResponse.json();
+    expect(nearLegBody).toMatchObject(newSwapTrade);
   });
 
-  test("PUT - Fully update Swap Trade", async () => {
+  // ✅ 2. GET - Retrieve Swap Trade and Far Leg
+  test("🔍 GET - Retrieve Swap Trade and Far Leg", async ({ request }) => {
+    console.log("🔍 Fetching Near Leg Trade...");
+    const nearLegResponse = await request.get(
+      `${API_BASE_URL}/trades/${SWAP_TRADE_ID}`
+    );
+    const nearLegBody = await nearLegResponse.json();
+
+    // Normalize fields before comparison
+    nearLegBody.weBuyWeSell = nearLegBody.weBuyWeSell.toLowerCase();
+
+    console.log("🔍 API Swap Trades:", nearLegBody);
+    expect(nearLegResponse.status()).toBe(200);
+    expect(nearLegBody).toMatchObject(newSwapTrade);
+
+    console.log("🔍 Fetching Far Leg Trade...");
+    const farLegResponse = await request.get(
+      `${API_BASE_URL}/trades/${SWAP_TRADE_FAR_ID}`
+    );
+    const farLegBody = await farLegResponse.json();
+    console.log("🔍 Far Leg Trade Data:", farLegBody);
+    expect(farLegResponse.status()).toBe(200);
+  });
+
+  // ✅ 3. PUT - Fully Update Swap Trade
+  test("✏️ PUT - Fully Update Swap Trade", async ({ request }) => {
     console.log("🚀 Performing full update via PUT...");
-    const updatedTrade = {
-      tradeType: "SWAP",
-      parentTradeId: "SWAP-BASE-001",
+
+    const updatedData = {
+      ...newSwapTrade,
       tradeDate: "2025-03-01",
       settlementDate: "2025-04-05",
       weBuyWeSell: "we buy",
       counterpartyId: "004",
-      counterpartyName: "Lloyds Bank",
       buyCurrency: "USD",
       sellCurrency: "JPY",
       buyAmount: 1200000,
-      sellAmount: 140000000,
+      sellAmount: 140004000,
       exchangeRate: 116.67,
       buyNostroAccountId: "004-USD",
       sellNostroAccountId: "004-JPY",
     };
 
-    const putResponse = await apiRequest.put(
+    console.log("📝 PUT Request Data:", updatedData);
+
+    const putResponse = await request.put(
       `${API_BASE_URL}/trades/${SWAP_TRADE_ID}`,
       {
-        data: updatedTrade,
+        headers: { "Content-Type": "application/json" },
+        data: updatedData,
       }
     );
 
+    console.log("🔍 PUT Response Status:", putResponse.status());
     expect(putResponse.status()).toBe(200);
 
-    const getUpdatedResponse = await apiRequest.get(
+    const getUpdatedResponse = await request.get(
       `${API_BASE_URL}/trades/${SWAP_TRADE_ID}`
     );
-    const responseBody = await getUpdatedResponse.json();
+    const updatedTrade = await getUpdatedResponse.json();
 
-    expect(responseBody).toMatchObject(updatedTrade);
+    expect(updatedTrade).toMatchObject(updatedData);
   });
 
-  test("PATCH - Partially update Swap Trade", async () => {
-    console.log("🚀 Performing partial update via PATCH...");
-    const patchData = {
-      settlementDate: "2025-04-15",
-      weBuyWeSell: "we sell",
-    };
-
-    const patchResponse = await apiRequest.patch(
+  // ✅ 4. PATCH - Partial Update (Change exchangeRate)
+  test("🔄 PATCH - Partially Update Swap Trade", async ({ request }) => {
+    const patchData = { exchangeRate: 1.12 };
+    const patchResponse = await request.patch(
       `${API_BASE_URL}/trades/${SWAP_TRADE_ID}`,
       {
         data: patchData,
@@ -113,29 +132,26 @@ test.describe.skip("Swap Trade CRUD Operations", () => {
 
     expect(patchResponse.status()).toBe(200);
 
-    const getPatchedResponse = await apiRequest.get(
-      `${API_BASE_URL}/trades/${SWAP_TRADE_ID}`
-    );
-    const responseBody = await getPatchedResponse.json();
+    const updatedTrade = await request
+      .get(`${API_BASE_URL}/trades/${SWAP_TRADE_ID}`)
+      .then((res) => res.json());
 
-    expect(responseBody.settlementDate).toBe(patchData.settlementDate);
-    expect(responseBody.weBuyWeSell).toBe(patchData.weBuyWeSell);
+    // Ensure exchange rate matches with proper precision
+    expect(updatedTrade.exchangeRate.toFixed(4)).toBe(
+      patchData.exchangeRate.toFixed(4)
+    );
   });
 
-  test("DELETE - Remove Swap Trade", async () => {
-    console.log("🚀 Deleting Swap Trade SWAP-TEST-001...");
-    const deleteResponse = await apiRequest.delete(
+  // ✅ 5. DELETE - Remove Swap Trade
+  test("🗑️ DELETE - Remove Swap Trade", async ({ request }) => {
+    const deleteResponse = await request.delete(
       `${API_BASE_URL}/trades/${SWAP_TRADE_ID}`
     );
     expect(deleteResponse.status()).toBe(204);
 
-    const getDeletedResponse = await apiRequest.get(
+    const getDeletedResponse = await request.get(
       `${API_BASE_URL}/trades/${SWAP_TRADE_ID}`
     );
     expect(getDeletedResponse.status()).toBe(404);
-  });
-
-  test.afterAll(async () => {
-    await apiRequest.dispose();
   });
 });
