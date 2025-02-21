@@ -1,4 +1,4 @@
-import { test, expect } from "../../hooks/apiHooks";
+import { test, expect } from "../../../hooks/apiHooks";
 
 const API_BASE_URL = "http://localhost:3000/api";
 

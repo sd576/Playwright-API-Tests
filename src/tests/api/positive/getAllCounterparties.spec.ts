@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { compareData } from "../../fixtures/compareData";
-import counterpartyData from "../../../reference-data/counterpartyData.json";
+import { compareData } from "../../../fixtures/compareData";
+import counterpartyData from "../../../../reference-data/counterpartyData.json";
 
 const API_BASE_URL = "http://localhost:3000/api";
 

@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import {
   waitForServerReady,
   ensureResourceClean,
-} from "../../fixtures/serverSetup";
+} from "../../../fixtures/serverSetup";
 
 const API_BASE_URL = "http://localhost:3000/api";
 const SPOT_TRADE_ID = "SPOT-TEST-001";

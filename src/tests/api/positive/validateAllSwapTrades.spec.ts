@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import swapTrades from "../../../reference-data/allTradeData.json";
+import swapTrades from "../../../../reference-data/allTradeData.json";
 
 const API_BASE_URL = "http://localhost:3000/api";
 

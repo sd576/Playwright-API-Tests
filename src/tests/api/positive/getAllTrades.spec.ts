@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
-import { compareData } from "../../fixtures/compareData";
-import tradeData from "../../../reference-data/allTradeData.json";
+import { compareData } from "../../../fixtures/compareData";
+import tradeData from "../../../../reference-data/allTradeData.json";
 
 const API_ENDPOINT = "http://localhost:3000/api/trades";
 
