@@ -1,5 +1,4 @@
 import { test, expect } from "@playwright/test";
-import { request } from "http";
 
 const API_BASE_URL = "http://localhost:3000/api/trades";
 
@@ -12,8 +11,9 @@ const validationErrors = {
   tradeDateBeforeSettlement: "Trade date must be before settlement date",
   weBuyWeSell: "We Buy/We Sell must be either 'we buy' or 'we sell'",
   counterpartyId: "Counterparty ID is required",
+  buyCurrency: "Buy currency must be a valid 3-letter currency code",
   sellCurrency: "Sell currency must be a valid 3-letter currency code",
-  buyCurrency: "Buy currency and Sell currency must be different",
+  differentCurrencies: "Buy currency and Sell currency must be different",
   buyAmount: "Buy amount must be a positive number",
   sellAmount: "Sell amount must be a positive number",
   exchangeRate: "Exchange rate must be a positive number",
@@ -28,36 +28,35 @@ test.describe("❌ Trade Validation Errors", () => {
     test(`❌ Should fail when required fields are missing for ${tradeType}`, async ({
       request,
     }) => {
-      const invalidTradePayload = {};
+      const invalidTradePayload = {}; // 🔹 Send an empty request to trigger all validation errors
 
       const response = await request.post(API_BASE_URL, {
         data: invalidTradePayload,
       });
 
-      expect(response.status()).toBe(400);
+      expect(response.status()).toBe(400); // 🔴 Expect HTTP 400 Bad Request
       const responseBody = await response.json();
 
-      console.log(`🔍 Response for ${API_BASE_URL}:`, responseBody);
+      console.log(`🔍 Response for ${tradeType}:`, responseBody);
 
       // 🔹 Check that ALL expected validation errors exist in response
       expect(responseBody.errors).toEqual(
         expect.arrayContaining([
           { msg: validationErrors.tradeId },
+          { msg: validationErrors.tradeType },
           { msg: validationErrors.tradeDate },
           { msg: validationErrors.settlementDate },
-          { msg: validationErrors.tradeDateBeforeSettlement },
           { msg: validationErrors.weBuyWeSell },
           { msg: validationErrors.counterpartyId },
-          { msg: validationErrors.sellCurrency },
           { msg: validationErrors.buyCurrency },
+          { msg: validationErrors.sellCurrency },
           { msg: validationErrors.buyAmount },
           { msg: validationErrors.sellAmount },
           { msg: validationErrors.exchangeRate },
-          { msg: validationErrors.swapParentId },
         ])
       );
 
-      // 🔷 Additional check for SWAP trades (parentTradeId required)
+      // 🔹 Additional check for SWAP trades (parentTradeId required)
       if (tradeType === "SWAP") {
         expect(responseBody.errors).toEqual(
           expect.arrayContaining([{ msg: validationErrors.swapParentId }])
@@ -68,21 +67,61 @@ test.describe("❌ Trade Validation Errors", () => {
     test(`❌ Should fail when invalid data types are sent for ${tradeType}`, async ({
       request,
     }) => {
-      const invalidTradePAyload = {
+      const invalidTradePayload = {
         tradeId: 12345, // 🔴 Should be a string
         tradeType: "INVALID", // 🔴 Should be SPOT, FORWARD, SWAP
-        tradeDate: "34-23-2025", // 🔴 Invalid date format
-        settlementDate: "2025-14-20", // 🔴 Invalid date format
-        tradeDateBeforeSettlement: "Trade date must be before settlement date",
-        weBuyWeSell: "We Buy/We Sell must be either 'we buy' or 'we sell'",
-        counterpartyId: "Counterparty ID is required",
-        sellCurrency: "Sell currency must be a valid 3-letter currency code",
-        buyCurrency: "Buy currency and Sell currency must be different",
-        buyAmount: "Buy amount must be a positive number",
-        sellAmount: "Sell amount must be a positive number",
-        exchangeRate: "Exchange rate must be a positive number",
-        swapParentId: "SWAP trades must have a parentTradeId",
+        tradeDate: "32-13-2025", // 🔴 Invalid date format
+        settlementDate: "2025-02-30", // 🔴 Invalid date format
+        weBuyWeSell: "invalid", // 🔴 Should be "we buy" or "we sell"
+        counterpartyId: null, // 🔴 Should be a string
+        buyCurrency: "US", // 🔴 Should be 3 letters
+        sellCurrency: "USD", // 🔴 Should not be the same as buyCurrency
+        buyAmount: "ten", // 🔴 Should be a number
+        sellAmount: -100, // 🔴 Should be positive
+        exchangeRate: "invalid", // 🔴 Should be a number
+        parentTradeId: tradeType === "SWAP" ? 123 : undefined, // 🔴 Should be a string for SWAP
       };
+
+      const response = await request.post(API_BASE_URL, {
+        data: invalidTradePayload,
+      });
+
+      expect(response.status()).toBe(400);
+      const responseBody = await response.json();
+
+      console.log(`🔍 Invalid Data Response for ${tradeType}:`, responseBody);
+
+      expect(responseBody.errors).toEqual(
+        expect.arrayContaining([
+          { msg: validationErrors.tradeId },
+          { msg: validationErrors.tradeType },
+          { msg: validationErrors.tradeDate },
+          { msg: validationErrors.settlementDate },
+          { msg: validationErrors.weBuyWeSell },
+          { msg: validationErrors.counterpartyId },
+          { msg: validationErrors.buyCurrency },
+          { msg: validationErrors.sellCurrency },
+          { msg: validationErrors.buyAmount },
+          { msg: validationErrors.sellAmount },
+          { msg: validationErrors.exchangeRate },
+        ])
+      );
+
+      if (tradeType === "SWAP") {
+        expect(responseBody.errors).toEqual(
+          expect.arrayContaining([{ msg: validationErrors.swapParentId }])
+        );
+      }
+    });
+
+    test(`❌ Should return 404 when retrieving a non-existent ${tradeType} trade`, async ({
+      request,
+    }) => {
+      const response = await request.get(`${API_BASE_URL}/INVALID-TRADE-ID`);
+
+      expect(response.status()).toBe(404);
+      const responseBody = await response.json();
+      expect(responseBody.message).toBe("Trade not found");
     });
   }
 });

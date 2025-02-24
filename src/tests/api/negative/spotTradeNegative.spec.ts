@@ -21,15 +21,14 @@ test.describe("❌ Negative Tests - Spot Trades", () => {
     console.log(
       "🔍 API Response for Missing Fields:",
       JSON.stringify(responseBody, null, 2)
-    ); // ✅ Debugging
+    );
 
-    // Extract error messages safely
     const errorMessages = responseBody.errors
       ? responseBody.errors.map((err: any) => err.msg)
       : [];
 
-    expect(errorMessages).toContain("counterpartyId is required");
-    expect(errorMessages).toContain("tradeId is required");
+    expect(errorMessages).toContain("Counterparty ID is required");
+    expect(errorMessages).toContain("Trade ID must be a non-empty string");
     expect(errorMessages).toContain("Trade date must be in YYYY-MM-DD format");
     expect(errorMessages).toContain("Exchange rate must be a positive number");
   });
@@ -57,15 +56,19 @@ test.describe("❌ Negative Tests - Spot Trades", () => {
     console.log(
       "🔍 API Response for Invalid Data Types:",
       JSON.stringify(responseBody, null, 2)
-    ); // ✅ Debugging
+    );
 
-    // Extract error messages safely
     const errorMessages = responseBody.errors
       ? responseBody.errors.map((err: any) => err.msg)
       : [];
 
-    expect(errorMessages).toContain("tradeId must be a string");
-    expect(errorMessages).toContain("buyAmount must be a number");
-    expect(errorMessages).toContain("tradeDate must be in YYYY-MM-DD format");
+    expect(errorMessages).toContain("Trade date must be in YYYY-MM-DD format");
+    expect(errorMessages).toContain(
+      "Settlement date must be in YYYY-MM-DD format"
+    );
+    expect(errorMessages).toContain(
+      "We Buy/We Sell must be either 'we buy' or 'we sell'"
+    );
+    expect(errorMessages).toContain("Buy amount must be a positive number");
   });
 });
