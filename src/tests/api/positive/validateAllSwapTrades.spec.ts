@@ -3,7 +3,6 @@ import swapTrades from "../../../../reference-data/allTradeData.json";
 
 const API_BASE_URL = "http://localhost:3000/api";
 
-// ✅ Define the Trade type inside the test file (self-contained)
 interface Trade {
   tradeId: string;
   tradeType: string;
@@ -26,7 +25,6 @@ test("🔍 Validate All Seeded SWAP Trades Match Database", async ({
 }) => {
   console.log("🔍 Fetching all SWAP trades from API...");
 
-  // ✅ Introduce 1s delay to ensure DB commit is completed
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
   const getResponse = await request.get(`${API_BASE_URL}/trades`);
@@ -40,10 +38,9 @@ test("🔍 Validate All Seeded SWAP Trades Match Database", async ({
       weBuyWeSell: trade.weBuyWeSell.toLowerCase() as "we buy" | "we sell",
     }));
 
-  console.log(`✅ Retrieved ${swapTradesFromAPI.length} SWAP trades from API`);
+  console.log(`Retrieved ${swapTradesFromAPI.length} SWAP trades from API`);
   console.log("🔍 Comparing with `allTradeData.json`...");
 
-  // ✅ Ensure the JSON import is correctly typed as Trade[]
   const expectedSwapTrades: Trade[] = (swapTrades as Trade[])
     .filter((trade) => trade.tradeType === "SWAP")
     .map((trade) => ({
@@ -51,14 +48,13 @@ test("🔍 Validate All Seeded SWAP Trades Match Database", async ({
       weBuyWeSell: trade.weBuyWeSell.toLowerCase() as "we buy" | "we sell",
     }));
 
-  // ✅ Normalize API response to match JSON data structure
   swapTradesFromAPI.forEach((trade) => {
-    delete (trade as any).tradeDate; // 🚀 Ignore dynamically generated trade date
-    delete (trade as any).settlementDate; // 🚀 Ignore dynamically adjusted settlement date
-    delete (trade as any).buyNostroDescription; // 🚀 Ignore nostro descriptions
-    delete (trade as any).sellNostroDescription; // 🚀 Ignore nostro descriptions
+    delete (trade as any).tradeDate;
+    delete (trade as any).settlementDate;
+    delete (trade as any).buyNostroDescription;
+    delete (trade as any).sellNostroDescription;
 
-    trade.exchangeRate = Number(trade.exchangeRate.toFixed(4)); // Fix precision issues
+    trade.exchangeRate = Number(trade.exchangeRate.toFixed(4));
     if (trade.parentTradeId === "") trade.parentTradeId = null;
   });
 
@@ -68,18 +64,16 @@ test("🔍 Validate All Seeded SWAP Trades Match Database", async ({
     expectedSwapTrades.length
   );
 
-  // ✅ Normalize expected JSON data to match API response
   expectedSwapTrades.forEach((trade) => {
-    delete (trade as any).tradeDate; // 🚀 Ignore dynamically generated trade date
-    delete (trade as any).settlementDate; // 🚀 Ignore dynamically adjusted settlement date
-    delete (trade as any).buyNostroDescription; // 🚀 Ignore nostro descriptions
-    delete (trade as any).sellNostroDescription; // 🚀 Ignore nostro descriptions
+    delete (trade as any).tradeDate;
+    delete (trade as any).settlementDate;
+    delete (trade as any).buyNostroDescription;
+    delete (trade as any).sellNostroDescription;
 
     trade.exchangeRate = Number(trade.exchangeRate.toFixed(4));
     if (trade.parentTradeId === "") trade.parentTradeId = null;
   });
 
-  // ✅ Debugging: Log out API & Expected Swap Trades for troubleshooting
   console.log(
     "🔍 API Swap Trades (fetched from DB):",
     JSON.stringify(swapTradesFromAPI, null, 2)
@@ -89,7 +83,6 @@ test("🔍 Validate All Seeded SWAP Trades Match Database", async ({
     JSON.stringify(expectedSwapTrades, null, 2)
   );
 
-  // ✅ Ensure all SWAP trades from the API match expected seed data
   expect(swapTradesFromAPI).toEqual(expect.arrayContaining(expectedSwapTrades));
 
   console.log("✅ All SWAP trades match expected seed data!");

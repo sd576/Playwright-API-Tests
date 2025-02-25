@@ -2,12 +2,12 @@ import { test, expect } from "@playwright/test";
 
 const API_BASE_URL = "http://localhost:3000/api/trades";
 
-test.describe("❌ Negative Tests - Forward Trades", () => {
-  test("❌ Should fail to create a Forward trade with missing required fields", async ({
+test.describe("Negative Tests - Forward Trades", () => {
+  test("Should fail to create a Forward trade with missing required fields", async ({
     request,
   }) => {
     const invalidPayload = {
-      tradeType: "FORWARD", // Missing required fields
+      tradeType: "FORWARD",
       buyCurrency: "USD",
       sellCurrency: "EUR",
       buyAmount: 500000,
@@ -33,7 +33,7 @@ test.describe("❌ Negative Tests - Forward Trades", () => {
     expect(errorMessages).toContain("Exchange rate must be a positive number");
   });
 
-  test("❌ Should fail to create a forward trade with invalid data types", async ({
+  test("Should fail to create a forward trade with invalid data types", async ({
     request,
   }) => {
     const invalidPayload = {

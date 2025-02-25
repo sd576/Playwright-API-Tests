@@ -40,7 +40,7 @@ test.describe("Spot Trade API - Full CRUD Operations", () => {
     );
   });
 
-  // ✅ 1. POST - Create Spot Trade
+  // POST - Create Spot Trade
   test("POST - Create new Spot Trade", async ({ request }) => {
     const getResponse = await request.get(
       `${API_BASE_URL}/trades/${SPOT_TRADE_ID}`
@@ -49,7 +49,7 @@ test.describe("Spot Trade API - Full CRUD Operations", () => {
     expect(await getResponse.json()).toMatchObject(newSpotTrade);
   });
 
-  // ✅ 2. GET - Retrieve Spot Trade
+  // GET - Retrieve Spot Trade
   test("GET - Retrieve Spot Trade", async ({ request }) => {
     const getResponse = await request.get(
       `${API_BASE_URL}/trades/${SPOT_TRADE_ID}`
@@ -58,7 +58,7 @@ test.describe("Spot Trade API - Full CRUD Operations", () => {
     expect(await getResponse.json()).toMatchObject(newSpotTrade);
   });
 
-  // ✅ 3. PUT - Fully Update Spot Trade
+  // PUT - Fully Update Spot Trade
   test("PUT - Fully update Spot Trade", async ({ request }) => {
     const updatedData = {
       ...newSpotTrade,
@@ -77,7 +77,7 @@ test.describe("Spot Trade API - Full CRUD Operations", () => {
     expect(await getUpdatedResponse.json()).toMatchObject(updatedData);
   });
 
-  // ✅ 4. PATCH - Partial Update (Change exchangeRate)
+  // PATCH - Partial Update (Change exchangeRate)
   test("PATCH - Partially update Spot Trade", async ({ request }) => {
     const patchData = { exchangeRate: 0.8 };
     const patchResponse = await request.patch(
@@ -92,7 +92,7 @@ test.describe("Spot Trade API - Full CRUD Operations", () => {
     expect(updatedTrade.exchangeRate).toBe(0.8);
   });
 
-  // ✅ 5. DELETE - Remove Spot Trade
+  // DELETE - Remove Spot Trade
   test("DELETE - Remove Spot Trade", async ({ request }) => {
     const deleteResponse = await request.delete(
       `${API_BASE_URL}/trades/${SPOT_TRADE_ID}`

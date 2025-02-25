@@ -2,12 +2,12 @@ import { test, expect } from "@playwright/test";
 
 const API_BASE_URL = "http://localhost:3000/api/trades";
 
-test.describe("❌ Negative Tests - Spot Trades", () => {
-  test("❌ Should fail to create a spot trade with missing required fields", async ({
+test.describe("Negative Tests - Spot Trades", () => {
+  test("Should fail to create a spot trade with missing required fields", async ({
     request,
   }) => {
     const invalidPayload = {
-      tradeType: "SPOT", // Missing required fields
+      tradeType: "SPOT",
       buyCurrency: "USD",
       sellCurrency: "EUR",
       buyAmount: 1000,
@@ -33,19 +33,19 @@ test.describe("❌ Negative Tests - Spot Trades", () => {
     expect(errorMessages).toContain("Exchange rate must be a positive number");
   });
 
-  test("❌ Should fail to create a spot trade with invalid data types", async ({
+  test("Should fail to create a spot trade with invalid data types", async ({
     request,
   }) => {
     const invalidPayload = {
-      tradeId: 123, // Should be a string
+      tradeId: 123,
       tradeType: "SPOT",
-      tradeDate: "not-a-date", // Invalid date format
+      tradeDate: "not-a-date",
       counterpartyId: "002",
       buyCurrency: "USD",
       sellCurrency: "EUR",
-      buyAmount: "ten-thousand", // Should be a number
+      buyAmount: "ten-thousand",
       sellAmount: 9000,
-      exchangeRate: "1.1", // Should be a float
+      exchangeRate: "1.1",
     };
 
     const response = await request.post(API_BASE_URL, { data: invalidPayload });

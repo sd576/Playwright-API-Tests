@@ -40,7 +40,7 @@ test.describe("Forward Trade API - Full CRUD Operations", () => {
     );
   });
 
-  // ✅ 1. POST - Create Forward Trade
+  // POST - Create Forward Trade
   test("POST - Create new Forward Trade", async ({ request }) => {
     const getResponse = await request.get(
       `${API_BASE_URL}/trades/${FORWARD_TRADE_ID}`
@@ -49,7 +49,7 @@ test.describe("Forward Trade API - Full CRUD Operations", () => {
     expect(await getResponse.json()).toMatchObject(newForwardTrade);
   });
 
-  // ✅ 2. GET - Retrieve Forward Trade
+  // GET - Retrieve Forward Trade
   test("GET - Retrieve Forward Trade", async ({ request }) => {
     const getResponse = await request.get(
       `${API_BASE_URL}/trades/${FORWARD_TRADE_ID}`
@@ -58,7 +58,7 @@ test.describe("Forward Trade API - Full CRUD Operations", () => {
     expect(await getResponse.json()).toMatchObject(newForwardTrade);
   });
 
-  // ✅ 3. PUT - Fully Update Forward Trade
+  // PUT - Fully Update Forward Trade
   test("PUT - Fully update Forward Trade", async ({ request }) => {
     const updatedData = {
       ...newForwardTrade,
@@ -77,7 +77,7 @@ test.describe("Forward Trade API - Full CRUD Operations", () => {
     expect(await getUpdatedResponse.json()).toMatchObject(updatedData);
   });
 
-  // ✅ 4. PATCH - Partial Update (Change settlementDate)
+  // PATCH - Partial Update (Change settlementDate)
   test("PATCH - Partially update Forward Trade", async ({ request }) => {
     const patchData = { settlementDate: "2025-03-15" };
     const patchResponse = await request.patch(
@@ -92,7 +92,7 @@ test.describe("Forward Trade API - Full CRUD Operations", () => {
     expect(updatedTrade.settlementDate).toBe("2025-03-15");
   });
 
-  // ✅ 5. DELETE - Remove Forward Trade
+  // DELETE - Remove Forward Trade
   test("DELETE - Remove Forward Trade", async ({ request }) => {
     const deleteResponse = await request.delete(
       `${API_BASE_URL}/trades/${FORWARD_TRADE_ID}`

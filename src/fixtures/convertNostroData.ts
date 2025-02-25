@@ -28,23 +28,20 @@ const convertedFilePath =
 
 function convertNostroData(): void {
   try {
-    // Read and parse the original JSON file
     const rawData = fs.readFileSync(originalFilePath, "utf8");
     const nostroData: NostroEntry[] = JSON.parse(rawData);
 
-    // Convert the keys to match API response format
     const updatedData: ConvertedNostroEntry[] = nostroData.map(
       (entry: NostroEntry) => ({
-        id: entry.compoundKey, // Renaming `compoundKey` to `id`
+        id: entry.compoundKey,
         counterpartyId: entry.counterpartyId,
         currency: entry.currency,
-        nostroAccountId: entry.nostroCode, // Renaming `nostroCode` to `nostroAccountId`
-        nostroDescription: entry.description, // Renaming `description` to `nostroDescription`
+        nostroAccountId: entry.nostroCode,
+        nostroDescription: entry.description,
         managedById: entry.managedById,
       })
     );
 
-    // Save the converted data
     fs.writeFileSync(
       convertedFilePath,
       JSON.stringify(updatedData, null, 2),
@@ -57,5 +54,4 @@ function convertNostroData(): void {
   }
 }
 
-// Run the conversion
 convertNostroData();

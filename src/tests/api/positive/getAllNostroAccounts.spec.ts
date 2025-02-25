@@ -21,25 +21,25 @@ test("GET /nostro-accounts - Validate Nostro Account Data", async ({
   const responseBody = await response.json();
   console.log("GET Response Body: ", responseBody);
 
-  // 🔹 Define dynamically created test records to exclude
-  const testRecordIds = ["002-CHF", "CPTY001"]; // Add other test records if needed
+  // Define dynamically created test records to exclude
+  const testRecordIds = ["002-CHF", "CPTY001"];
 
-  // 🔹 Filter API response to remove test records
+  // Filter API response to remove test records
   const filteredResponse = responseBody.filter(
     (entry: { id: string }) => !testRecordIds.includes(entry.id)
   );
 
-  // 🔹 Filter `nostroAccountData.json` to also remove test records
+  // Filter `nostroAccountData.json` to also remove test records
   const filteredExpectedData = nostroAccountData.filter(
     (entry: { id: string }) => !testRecordIds.includes(entry.id)
   );
 
   console.log(
-    "✅ Filtering out dynamically created test records before comparison..."
+    "Filtering out dynamically created test records before comparison..."
   );
   console.log("🧐 Filtered API Response:", filteredResponse);
   console.log("📑 Filtered Expected Data:", filteredExpectedData);
 
-  // ✅ Compare filtered API response with filtered expected data
+  // Compare filtered API response with filtered expected data
   await compareData(filteredResponse, filteredExpectedData);
 });

@@ -42,10 +42,10 @@ test.describe("🌀 Swap Trade Full CRUD Operations", () => {
     );
 
     console.log("⏳ Waiting before running GET...");
-    await new Promise((r) => setTimeout(r, 1000)); // Ensure DB commit
+    await new Promise((r) => setTimeout(r, 1000));
   });
 
-  // ✅ 1. POST - Create Swap Trade
+  // POST - Create Swap Trade
   test("✅ POST - Create Swap Trade", async ({ request }) => {
     const getResponse = await request.get(
       `${API_BASE_URL}/trades/${SWAP_TRADE_ID}`
@@ -56,7 +56,7 @@ test.describe("🌀 Swap Trade Full CRUD Operations", () => {
     expect(nearLegBody).toMatchObject(newSwapTrade);
   });
 
-  // ✅ 2. GET - Retrieve Swap Trade and Far Leg
+  // GET - Retrieve Swap Trade and Far Leg
   test("🔍 GET - Retrieve Swap Trade and Far Leg", async ({ request }) => {
     console.log("🔍 Fetching Near Leg Trade...");
     const nearLegResponse = await request.get(
@@ -80,7 +80,7 @@ test.describe("🌀 Swap Trade Full CRUD Operations", () => {
     expect(farLegResponse.status()).toBe(200);
   });
 
-  // ✅ 3. PUT - Fully Update Swap Trade
+  // PUT - Fully Update Swap Trade
   test("✏️ PUT - Fully Update Swap Trade", async ({ request }) => {
     console.log("🚀 Performing full update via PUT...");
 
@@ -120,7 +120,7 @@ test.describe("🌀 Swap Trade Full CRUD Operations", () => {
     expect(updatedTrade).toMatchObject(updatedData);
   });
 
-  // ✅ 4. PATCH - Partial Update (Change exchangeRate)
+  // PATCH - Partial Update (Change exchangeRate)
   test("🔄 PATCH - Partially Update Swap Trade", async ({ request }) => {
     const patchData = { exchangeRate: 1.12 };
     const patchResponse = await request.patch(
@@ -142,7 +142,7 @@ test.describe("🌀 Swap Trade Full CRUD Operations", () => {
     );
   });
 
-  // ✅ 5. DELETE - Remove Swap Trade
+  // DELETE - Remove Swap Trade
   test("🗑️ DELETE - Remove Swap Trade", async ({ request }) => {
     const deleteResponse = await request.delete(
       `${API_BASE_URL}/trades/${SWAP_TRADE_ID}`

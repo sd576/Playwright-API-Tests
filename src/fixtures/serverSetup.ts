@@ -13,9 +13,7 @@ export async function waitForServerReady(
         console.log(`✅ Server is ready at ${url} (Attempt ${attempt})`);
         return;
       } else {
-        console.log(
-          `❗ Attempt ${attempt}: Received status ${response.status()}`
-        );
+        console.log(`Attempt ${attempt}: Received status ${response.status()}`);
       }
     } catch (error) {
       if (error instanceof Error) {
@@ -28,7 +26,7 @@ export async function waitForServerReady(
   }
 
   throw new Error(
-    `❌ Server not ready after ${maxAttempts} attempts (${
+    `Server not ready after ${maxAttempts} attempts (${
       (maxAttempts * interval) / 1000
     } seconds).`
   );
@@ -43,10 +41,10 @@ export async function ensureResourceClean(
   console.log(`♻️ Ensuring ${resourceId} does not exist before test...`);
   await request.delete(`${url}/${resourceId}`);
 
-  console.log(`✅ Creating ${resourceId}...`);
+  console.log(`Creating ${resourceId}...`);
   const postResponse = await request.post(`${url}`, { data: postData });
 
   if (postResponse.status() !== 201) {
-    throw new Error(`❌ Failed to create ${resourceId}`);
+    throw new Error(`Failed to create ${resourceId}`);
   }
 }

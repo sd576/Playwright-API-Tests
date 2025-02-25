@@ -14,22 +14,20 @@ test.describe("GET /trades - Validate All Trade Data", () => {
 
     let responseBody = await response.json();
 
-    // 🔍 Exclude dynamically generated test trades
     const excludedTradeIds = ["SPOT-TEST-001", "FWD-TEST-001", "SWAP-TEST-001"];
     responseBody = responseBody.filter(
       (trade: any) => !excludedTradeIds.includes(trade.tradeId)
     );
 
     console.log(
-      `✅ API returned ${responseBody.length} trades, comparing with reference data...`
+      `API returned ${responseBody.length} trades, comparing with reference data...`
     );
 
-    // ✅ Compare API response with expected reference data
     try {
       compareData(responseBody, tradeData);
       console.log("✅ Trade data matches reference data!");
     } catch (error) {
-      console.error("❌ Trade data mismatch detected!");
+      console.error("Trade data mismatch detected!");
       throw error;
     }
   });
